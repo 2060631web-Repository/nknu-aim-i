@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>合作 · AIM-I · 高齡產業經營學士原住民專班</title>
+<style>
+@font-face {
+  font-family: 'Iansui';
+  src: url('https://cdn.jsdelivr.net/gh/ButTaiwan/iansui@main/fonts/ttf/Iansui-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
+<style>
+:root{
+  --clay:#C42016;--clay-lt:#D94030;--earth:#2A1E14;--olive:#6B7A38;
+  --purple:#6A4A7A;--teal:#2A5870;--amber:#D4901C;
+  --cream:#F5F0E2;--parch:#EDE5D0;--fog:#E0D8C4;--border:#C8BFA8;
+  --mid:#7A6E58;--dark:#2A1E14;--white:#FDFAF4;
+  --serif:'Iansui',serif;--body:'Iansui','DFKai-SB',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--body);background:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(160,120,60,.05) 0px,rgba(160,120,60,.05) 1px,transparent 1px,transparent 22px),repeating-linear-gradient(-45deg,rgba(160,120,60,.05) 0px,rgba(160,120,60,.05) 1px,transparent 1px,transparent 22px);color:var(--dark);font-size:20px;line-height:2.1;letter-spacing:.03em;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.topbar{background:#1A1008;color:#9A8870;padding:7px 5%;font-size:14px;display:flex;justify-content:space-between;align-items:center;letter-spacing:.04em;}
+.topbar a{color:#9A8870;transition:color .2s;}.topbar a:hover{color:var(--amber);}
+nav{background:rgba(42,30,20,.97);backdrop-filter:blur(10px);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:62px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,.06);}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-dot{width:5px;height:38px;background:var(--clay);border-radius:3px;flex-shrink:0;}
+.brand-text{line-height:1.3;}
+.brand-main{font-family:var(--body);font-size:15px;color:#EAD9C8;letter-spacing:.03em;font-weight:500;}
+.brand-sub{font-size:13px;color:var(--amber);letter-spacing:.04em;opacity:.8;}
+.navlinks{display:flex;gap:24px;list-style:none;align-items:center;}
+.navlinks a{color:#D0C4B8;font-size:17px;letter-spacing:.03em;transition:color .2s;font-weight:500;}
+.navlinks a:hover{color:#fff;}
+.navlinks a.current{color:#fff;border-bottom:2px solid var(--clay);padding-bottom:2px;}
+.nav-apply{background:var(--clay)!important;color:var(--white)!important;padding:9px 22px;border-radius:3px;font-size:16px!important;font-weight:700;transition:background .2s;}
+.nav-apply:hover{background:var(--clay-lt)!important;}
+.has-mega>a::after{content:' ▾';font-size:10px;opacity:.5;vertical-align:middle;}
+/* MEGA MENU */
+.mega{position:fixed;top:62px;left:0;right:0;background:rgba(42,30,20,.98);backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);display:none;z-index:199;opacity:0;transform:translateY(-8px);transition:opacity .22s ease,transform .22s ease;}
+.mega.open{display:block;opacity:1;transform:translateY(0);}
+.mega-inner{display:grid;grid-template-columns:1fr 1fr;min-height:300px;}
+.mega-left{padding:48px 8%;border-right:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;justify-content:center;}
+.mega-tag{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:14px;opacity:.8;}
+.mega-headline{font-family:var(--serif);font-size:clamp(20px,2.8vw,34px);font-weight:700;color:#fff;line-height:1.25;margin-bottom:14px;}
+.mega-desc{font-size:16px;color:rgba(255,255,255,.42);line-height:1.85;max-width:360px;}
+.mega-right{padding:48px 8%;display:flex;flex-direction:column;justify-content:center;}
+.mega-links{list-style:none;}
+.mega-links li{border-bottom:1px solid rgba(255,255,255,.07);}
+.mega-links li:first-child{border-top:1px solid rgba(255,255,255,.07);}
+.mega-links a{display:flex;align-items:center;justify-content:space-between;padding:14px 0;font-size:18px;color:rgba(255,255,255,.55);transition:color .2s;}
+.mega-links a:hover{color:#fff;}
+.mega-links a::after{content:'→';opacity:0;transform:translateX(-6px);transition:all .2s;font-size:13px;}
+.mega-links a:hover::after{opacity:1;transform:translateX(0);}
+.mega-links .hl{color:var(--amber);}
+.mega-overlay{position:fixed;inset:0;top:62px;background:rgba(0,0,0,.35);z-index:198;display:none;}
+.mega-overlay.open{display:block;}
+/* WAVE */
+.wave{display:block;width:100%;overflow:hidden;line-height:0;}
+.wave svg{display:block;width:100%;}
+/* PAGE HERO */
+.page-hero{background:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(160,120,60,.055) 0px,rgba(160,120,60,.055) 1px,transparent 1px,transparent 22px),repeating-linear-gradient(-45deg,rgba(160,120,60,.055) 0px,rgba(160,120,60,.055) 1px,transparent 1px,transparent 22px);padding:80px 5% 0;position:relative;overflow:hidden;}
+.page-hero-inner{max-width:1180px;margin:0 auto;padding-bottom:60px;}
+.page-eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.page-eyebrow::before{content:'◆';font-size:9px;}
+.page-title{font-family:var(--serif);font-size:clamp(36px,6vw,72px);font-weight:900;color:var(--dark);line-height:1.05;letter-spacing:-.01em;margin-bottom:20px;}
+.page-title em{font-style:normal;-webkit-text-stroke:2px var(--clay);color:transparent;}
+.page-lead{font-size:19px;color:var(--mid);max-width:560px;line-height:1.85;}
+/* CONTENT */
+section{padding:72px 5%;}
+.mx{max-width:1180px;margin:0 auto;}
+.eyebrow{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'◆';font-size:9px;}
+.eyebrow-lt{color:rgba(255,255,255,.4);}.eyebrow-lt::before{color:var(--amber);}
+.sh{font-family:var(--serif);font-size:clamp(22px,3.2vw,38px);font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:18px;}
+.sh-lt{color:#fff;}
+.lead-text{font-size:20px;color:var(--mid);line-height:2.0;margin-bottom:40px;max-width:640px;}
+.lead-lt{color:rgba(255,255,255,.52);}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+/* PH */
+.ph{background:var(--fog);border:1px solid var(--border);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--mid);letter-spacing:.06em;text-align:center;}
+/* QUOTE */
+.quote-block{background:var(--cream);border-left:4px solid var(--clay);padding:20px 24px;margin:22px 0;border-radius:0 4px 4px 0;}
+.quote-block p{font-family:var(--serif);font-size:20px;color:var(--dark);line-height:2.0;font-weight:500;}
+.quote-block cite{display:block;font-size:13px;color:var(--mid);margin-top:8px;font-style:normal;}
+/* CARDS */
+.card{background:var(--cream);border:1px solid var(--border);border-radius:3px;padding:32px 28px;}
+.card-r{border-left:4px solid var(--clay);}
+.card-g{border-left:4px solid var(--olive);}
+.card-t{border-left:4px solid var(--teal);}
+.card-p{border-left:4px solid var(--purple);}
+.card-a{border-left:4px solid var(--amber);}
+.card h3{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--dark);margin-bottom:10px;}
+.card p{font-size:17px;color:var(--mid);line-height:1.85;}
+/* DARK SECTION */
+.dark-section{padding:72px 5%;position:relative;overflow:hidden;}
+.dark-section::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cpolyline points='0,24 12,0 24,24 36,0 48,24' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/svg%3E");background-size:48px 24px;opacity:.04;}
+/* STAT ROW */
+.stats{background:var(--clay);display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:28px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.12);}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:var(--serif);font-size:clamp(26px,3vw,40px);font-weight:900;color:#fff;display:block;line-height:1.1;}
+.stat-l{font-size:16px;color:rgba(255,255,255,.65);margin-top:6px;line-height:1.6;}
+/* BUTTONS */
+.btn-fill{background:var(--clay);color:var(--white);padding:15px 34px;border-radius:3px;font-size:16px;font-weight:700;letter-spacing:.04em;transition:background .2s;display:inline-block;}
+.btn-fill:hover{background:var(--clay-lt);}
+.btn-ghost{border:2px solid var(--border);color:var(--mid);padding:15px 28px;border-radius:3px;font-size:16px;font-weight:500;transition:all .2s;display:inline-block;}
+.btn-ghost:hover{border-color:var(--dark);color:var(--dark);}
+.btn-amber{background:var(--amber);color:var(--earth);padding:13px 26px;border-radius:3px;font-size:15px;font-weight:700;letter-spacing:.04em;transition:opacity .2s;display:inline-block;}
+.btn-amber:hover{opacity:.88;}
+.btn-white{background:#fff;color:var(--clay);padding:14px 30px;border-radius:3px;font-size:15px;font-weight:700;letter-spacing:.04em;transition:opacity .2s;display:inline-block;}
+.btn-white:hover{opacity:.88;}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+/* DIVIDERS */
+.diam{display:inline-block;background:var(--amber);transform:rotate(45deg);border-radius:1px;opacity:.65;}
+.diam-row{display:flex;gap:8px;margin:16px 0;}
+/* INFO TABLE */
+.info-table{}
+.info-row{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--border);}
+.info-row:first-child{border-top:1px solid var(--border);}
+.info-key{font-size:16px;color:var(--mid);}
+.info-val{font-size:17px;color:var(--dark);font-weight:500;text-align:right;}
+.info-val.past{text-decoration:line-through;opacity:.35;}
+.info-val small{display:block;font-size:12px;color:var(--mid);font-weight:400;}
+/* FAQ */
+.fq{padding:20px 0;border-bottom:1px solid var(--border);}
+.fq-q{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--dark);margin-bottom:10px;line-height:1.4;}
+.fq-q::before{content:'◆ ';color:var(--amber);font-size:10px;vertical-align:middle;}
+.fq-a{font-size:17px;color:var(--mid);line-height:1.85;}
+.fq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.fq-grid .fq:nth-child(odd){padding-right:48px;border-right:1px solid var(--border);}
+.fq-grid .fq:nth-child(even){padding-left:48px;}
+/* YEAR TIMELINE */
+.yr-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.yr-row::before{content:'';position:absolute;top:11px;left:0;right:0;height:1px;background:rgba(255,255,255,.15);}
+.yr{padding-top:36px;padding-right:24px;position:relative;}
+.yr-node{position:absolute;top:3px;left:0;width:16px;height:16px;background:var(--amber);transform:rotate(45deg);border-radius:1px;z-index:1;}
+.yr-lbl{font-size:13px;letter-spacing:.14em;color:rgba(255,255,255,.28);margin-bottom:12px;font-weight:700;}
+.yr h3{font-family:var(--serif);font-size:19px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3;}
+.yr p{font-size:16px;color:rgba(255,255,255,.42);line-height:1.8;margin-bottom:14px;}
+.yr-tag{display:inline-block;font-size:13px;color:rgba(255,255,255,.28);border:1px solid rgba(255,255,255,.12);padding:3px 10px;border-radius:1px;margin:2px 2px 2px 0;}
+/* FOOTER */
+footer{background:var(--earth);padding:52px 5% 32px;}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:36px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.06);}
+.fb{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.logo-mark-ft{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:22px;height:22px;}
+.logo-mark-ft div{border-radius:2px;}
+.ft-nm{font-family:var(--serif);font-size:15px;font-weight:700;color:#fff;}
+.ft-nm span{font-weight:400;opacity:.3;font-size:13px;}
+.ft-desc{font-size:15px;color:rgba(255,255,255,.25);line-height:1.9;}
+.fc h4{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.16);margin-bottom:14px;}
+.fc ul{list-style:none;}
+.fc li{margin-bottom:10px;}
+.fc a{font-size:16px;color:rgba(255,255,255,.3);transition:color .2s;}
+.fc a:hover{color:#fff;}
+.ft-b{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.ft-b p{font-size:14px;color:rgba(255,255,255,.14);}
+.ft-soc{display:flex;gap:20px;}
+.ft-soc a{font-size:12px;color:rgba(255,255,255,.2);letter-spacing:.08em;transition:color .2s;}
+.ft-soc a:hover{color:rgba(255,255,255,.6);}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
+  .stats{grid-template-columns:1fr 1fr;}
+  .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
+  .fq-grid .fq:nth-child(even){padding-left:0;}
+  .mega-inner{grid-template-columns:1fr;}
+  .mega-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:32px 6%;}
+  .mega-right{padding:24px 6%;}
+  .navlinks li:not(:last-child):not(:nth-last-child(2)){display:none;}
+}
+
+/* Invitation extra styles */
+.inv-hero{background:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(160,120,60,.055) 0px,rgba(160,120,60,.055) 1px,transparent 1px,transparent 22px),repeating-linear-gradient(-45deg,rgba(160,120,60,.055) 0px,rgba(160,120,60,.055) 1px,transparent 1px,transparent 22px);padding:96px 5% 0;}
+.inv-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(196,32,22,.1);border:1px solid rgba(196,32,22,.2);color:var(--clay);font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:8px 18px;border-radius:2px;margin-bottom:28px;font-weight:700;}
+.inv-h{font-family:var(--serif);font-size:clamp(40px,7vw,90px);font-weight:900;color:var(--dark);line-height:.97;letter-spacing:-.02em;margin-bottom:28px;}
+.inv-h em{font-style:normal;-webkit-text-stroke:2px var(--clay);color:transparent;display:block;}
+.inv-lead{font-size:19px;color:var(--mid);max-width:560px;line-height:1.9;margin-bottom:40px;}
+.ct-card{display:flex;align-items:center;gap:20px;padding:26px 30px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);text-decoration:none;transition:background .2s;}
+.ct-card:hover{background:rgba(255,255,255,.11);}
+.ct-card+.ct-card{border-top:none;}
+.ct-icon{font-size:24px;flex-shrink:0;}
+.ct-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:5px;}
+.ct-val{font-size:16px;font-weight:500;}
+.way-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+@media(max-width:900px){.way-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span>國立高雄師範大學 管理學院</span>
+  <a href="https://w3.nknu.edu.tw" target="_blank">高師大官網</a>
+</div>
+<nav>
+  <div class="brand">
+    <div class="brand-dot"></div>
+    <div class="brand-text">
+      <div class="brand-main">高齡產業經營學士原住民專班</div>
+      <div class="brand-sub">AIM-I · National Kaohsiung Normal University</div>
+    </div>
+  </div>
+  <ul class="navlinks">
+    <li class="nav-item has-mega"><a href="about.html" data-mega="mega-about">關於</a></li>
+    <li class="nav-item has-mega"><a href="learn.html" data-mega="mega-learn">學習</a></li>
+    <li class="nav-item has-mega"><a href="people.html" data-mega="mega-people">我們的人</a></li>
+    <li class="nav-item has-mega"><a href="collab.html" data-mega="mega-collab" class="current">合作</a></li>
+    <li class="nav-item has-mega"><a href="apply.html" data-mega="mega-apply">申請</a></li>
+    <li><a href="apply.html" class="nav-apply">立即報名</a></li>
+  </ul>
+</nav>
+<div class="mega-overlay" id="mega-overlay"></div>
+<div class="mega" id="mega-about">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">關於 AIM-I</p><h2 class="mega-headline">高齡的問題，<br>由我們來定義。</h2><p class="mega-desc">台灣唯一以原住民族文化知識為核心的高齡產業學程。帶著你的好奇心來，就夠了。</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="about.html">我們是誰</a></li><li><a href="about.html#belief">核心理念</a></li><li><a href="about.html#stats">關鍵數字</a></li><li><a href="apply.html#faq">常見問題</a></li><li><a href="apply.html#contact" class="hl">✉ 聯絡我們</a></li></ul></div>
+  </div>
+</div>
+<div class="mega" id="mega-learn">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">學習</p><h2 class="mega-headline">你會學到<br>什麼本事？</h2><p class="mega-desc">三個核心能力，搭配四年真實場域的學習旅程。</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li><li><a href="learn.html#news">最新消息</a></li></ul></div>
+  </div>
+</div>
+<div class="mega" id="mega-people">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">我們的人</p><h2 class="mega-headline">認識<br>帶你走的人。</h2><p class="mega-desc">師資、業師、學生——每一個人都帶著真實的故事來到這裡。</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="people.html#faculty-grid">師資群</a></li><li><a href="people.html#mentors">業師團隊</a></li><li><a href="people.html#stories">學生聊</a></li></ul></div>
+  </div>
+</div>
+<div class="mega" id="mega-collab">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">產學合作</p><h2 class="mega-headline">你的真實問題，<br>是他們最好的教材。</h2><p class="mega-desc">不需要完整的合作計畫——一個想法就可以是開始。</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="collab.html">銀色產業前線見學</a></li><li><a href="collab.html#sprint">高齡產業解題松</a></li><li><a href="collab.html#mentor">高齡產業圖鑑</a></li><li><a href="collab.html#collab-intent" class="hl">共場．合作意向</a></li></ul></div>
+  </div>
+</div>
+<div class="mega" id="mega-apply">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">申請</p><h2 class="mega-headline">你來了，<br>就對了。</h2><p class="mega-desc">不管你現在確定不確定，帶著你的好奇心來就夠了。</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="apply.html#qualify">116學年度招生資訊</a></li><li><a href="apply.html#docs">申請資格</a></li><li><a href="apply.html#faq">常見問題</a></li><li><a href="mailto:dctarn@mail.nknu.edu.tw" class="hl">✉ 直接聯絡我們</a></li></ul></div>
+  </div>
+</div>
+
+
+<!-- HERO -->
+<div class="inv-hero">
+  <div style="max-width:1180px;margin:0 auto;padding-bottom:60px;" class="reveal">
+    <div class="inv-tag">產學合作</div>
+    <h1 class="inv-h">
+      你的真實問題，<br>
+      <em>就是最好的教材。</em>
+    </h1>
+    <p class="inv-lead">
+      AIM-I 的學生需要走進真實的場域，面對真實的問題，接受真實的回饋。
+      你不需要帶著完整的合作計畫來——一個想法就夠了。
+    </p>
+    <a href="#contact" class="btn-fill">有想法，來聊聊 →</a>
+  </div>
+  <div class="wave" style="background:var(--cream);"><svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:160px;"><path d="M0,85 C140,36 300,125 480,78 C660,32 820,112 1000,72 C1160,36 1300,105 1440,74 L1440,160 L0,160 Z" fill="#6B7A38" opacity=".68"/><path d="M0,100 C180,58 360,130 560,92 C760,54 940,118 1140,84 C1280,58 1380,100 1440,90 L1440,160 L0,160 Z" fill="#D4901C" opacity=".52"/><path d="M0,114 C200,84 400,136 620,108 C840,80 1060,128 1280,100 C1360,88 1408,106 1440,100 L1440,160 L0,160 Z" fill="#2A5870" opacity=".65"/><path d="M0,126 C240,108 480,142 720,124 C960,106 1200,138 1440,122 L1440,160 L0,160 Z" fill="#6A4A7A" opacity=".6"/><path d="M0,138 C300,128 600,146 900,136 C1200,126 1350,142 1440,136 L1440,160 L0,160 Z" fill="var(--clay)"/></svg></div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><span class="stat-n">3</span><p class="stat-l">種合作方式<br>大小組織都可以參與</p></div>
+  <div class="stat"><span class="stat-n">4×</span><p class="stat-l">業師每年陪伴<br>一次一小時小班</p></div>
+  <div class="stat"><span class="stat-n">2天</span><p class="stat-l">內回覆<br>不管是大提案或小想法</p></div>
+  <div class="stat"><span class="stat-n">1個</span><p class="stat-l">問題就夠<br>不需要完整計畫</p></div>
+</div>
+
+<div class="wave" style="background:var(--clay);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
+
+<!-- INVITATION BODY -->
+<section style="padding:80px 5%;">
+  <div class="mx">
+    <div class="two-col reveal" style="gap:80px;align-items:start;">
+      <div>
+        <p class="eyebrow">為什麼我們需要你</p>
+        <h2 class="sh" style="margin-bottom:20px;">學生需要你<br>帶進來的那個問題。</h2>
+        <p style="font-size:18px;color:var(--mid);line-height:2.0;margin-bottom:20px;">
+          教室裡學不到的，是問題的質地——它有多複雜、有多矛盾、有多難被一個標準答案解決。
+        </p>
+        <p style="font-size:18px;color:var(--mid);line-height:2.0;margin-bottom:20px;">
+          你帶進來的那個問題，可能是你覺得微不足道的日常困境，卻是學生最好的設計起點。
+        </p>
+        <p style="font-size:18px;color:var(--mid);line-height:2.0;">
+          而你，會看見一個對你的現場充滿好奇的新世代——帶著文化視角和服務設計的工具，給你一個你沒想過的可能性。
+        </p>
+      </div>
+      <div>
+        <div class="quote-block" style="margin-bottom:24px;">
+          <p>「你的真實問題，就是最好的教材。不管你的組織大小，都有你可以貢獻的位置。」</p>
+          <cite>— AIM-I 產學合作理念</cite>
+        </div>
+        <div class="ph" style="aspect-ratio:4/3;">
+          <span style="font-size:28px;">🤝</span>
+          <span>合作現場照片</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--cream);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="#1C3A48"/></svg></div>
+
+<!-- THREE WAYS — simple, not over-explained -->
+<section style="background:#1C3A48;padding:80px 5%;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;pointer-events:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='28'%3E%3Ccircle cx='8' cy='8' r='2.5' fill='%23ffffff' opacity='.4'/%3E%3Ccircle cx='40' cy='8' r='2.5' fill='%23ffffff' opacity='.4'/%3E%3Cpath d='M0,14 Q12,8 24,14 Q36,20 48,14' stroke='%23ffffff' stroke-width='1.5' fill='none' opacity='.15'/%3E%3C/svg%3E&quot;);background-size:48px 28px;opacity:.1;"></div>
+  <div class="mx">
+    <p class="eyebrow eyebrow-lt">三種方式</p>
+    <h2 class="sh sh-lt" style="margin-bottom:48px;">你可以選擇<br>最適合你的方式加入。</h2>
+    <div class="way-row reveal">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:40px 32px;position:relative;overflow:hidden;">
+        <div style="font-family:var(--serif);font-size:80px;font-weight:900;color:rgba(255,255,255,.04);position:absolute;bottom:-16px;right:12px;line-height:1;">01</div>
+        <span style="font-size:28px;display:block;margin-bottom:18px;">🏢</span>
+        <h3 id="fieldvisit" style="font-family:var(--serif);font-size:19px;font-weight:700;color:#fff;margin-bottom:12px;">銀色產業前線見學</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,.5);line-height:1.85;">開放你的空間，讓學生走進來。每學期兩次，你提供場域，學生帶走真實問題。</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:40px 32px;position:relative;overflow:hidden;">
+        <div style="font-family:var(--serif);font-size:80px;font-weight:900;color:rgba(255,255,255,.04);position:absolute;bottom:-16px;right:12px;line-height:1;">02</div>
+        <span style="font-size:28px;display:block;margin-bottom:18px;">🎯</span>
+        <h3 id="sprint" style="font-family:var(--serif);font-size:19px;font-weight:700;color:#fff;margin-bottom:12px;">高齡產業解題松</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,.5);line-height:1.85;">說出你面對的問題，學生以此為題，完成服務設計和商業提案，在 Demo Day 向你發表。</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);padding:40px 32px;position:relative;overflow:hidden;">
+        <div style="font-family:var(--serif);font-size:80px;font-weight:900;color:rgba(255,255,255,.04);position:absolute;bottom:-16px;right:12px;line-height:1;">03</div>
+        <span style="font-size:28px;display:block;margin-bottom:18px;">📖</span>
+        <h3 id="mentor" style="font-family:var(--serif);font-size:19px;font-weight:700;color:#fff;margin-bottom:12px;">高齡產業圖鑑</h3>
+        <p style="font-size:15px;color:rgba(255,255,255,.5);line-height:1.85;">記錄我們走過的每一個合作場域——AgeTech 企業、日照機構、社會企業、部落組織。每一個場域都是一頁圖鑑，也是學生下一個問題的起點。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;"><span style="font-size:11px;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.14);padding:3px 10px;border-radius:1px;">AgeTech 企業</span><span style="font-size:11px;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.14);padding:3px 10px;border-radius:1px;">長照機構</span><span style="font-size:11px;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.14);padding:3px 10px;border-radius:1px;">部落組織</span><span style="font-size:11px;color:rgba(255,255,255,.32);border:1px solid rgba(255,255,255,.14);padding:3px 10px;border-radius:1px;">社會企業</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:#1C3A48;"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--clay)"/></svg></div>
+
+<!-- CONTACT — the real CTA -->
+<section style="background:var(--clay);padding:96px 5%;position:relative;overflow:hidden;" id="collab-intent">
+  <div style="position:absolute;inset:0;pointer-events:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cpolyline points='0,24 12,0 24,24 36,0 48,24' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/svg%3E&quot;);background-size:48px 24px;opacity:.05;"></div>
+  <div class="mx">
+    <div class="two-col reveal" style="gap:80px;align-items:center;">
+      <div>
+        <p class="eyebrow eyebrow-lt">聯絡我們</p>
+        <h2 style="font-family:var(--serif);font-size:clamp(32px,5vw,62px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:24px;">
+          勇於聯繫我們。<br>
+          <span style="-webkit-text-stroke:1.5px rgba(255,255,255,.4);color:transparent;">我們在等你。</span>
+        </h2>
+        <p style="font-size:18px;color:rgba(255,255,255,.52);line-height:1.9;margin-bottom:16px;">
+          不管你是大型機構還是小型組織，不管你的想法是完整的提案還是一個還沒說清楚的感覺——
+        </p>
+        <p style="font-size:18px;color:rgba(255,255,255,.52);line-height:1.9;margin-bottom:36px;">
+          都歡迎寫信或打電話給我們。<strong style="color:#fff;">你的主動聯繫，對學生來說意義重大。</strong>
+        </p>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <p style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px;">回覆時間</p>
+          <p style="font-size:16px;color:rgba(255,255,255,.6);">📅 2 個工作天內</p>
+          <p style="font-size:16px;color:rgba(255,255,255,.6);">⏰ 週一至週五 09:00–17:00</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:0;">
+        <a href="mailto:dctarn@mail.nknu.edu.tw" class="ct-card" style="border-radius:3px 3px 0 0;">
+          <span class="ct-icon">✉</span>
+          <div>
+            <p class="ct-label">電子郵件</p>
+            <p class="ct-val" style="color:var(--amber);">dctarn@mail.nknu.edu.tw</p>
+          </div>
+          <span style="margin-left:auto;color:rgba(255,255,255,.2);font-size:18px;">→</span>
+        </a>
+        <a href="tel:077172930" class="ct-card">
+          <span class="ct-icon">📞</span>
+          <div>
+            <p class="ct-label">電話</p>
+            <p class="ct-val" style="color:rgba(255,255,255,.75);">(07) 717-2930 # 2251</p>
+          </div>
+          <span style="margin-left:auto;color:rgba(255,255,255,.2);font-size:18px;">→</span>
+        </a>
+        <div class="ct-card" style="border-radius:0 0 3px 3px;cursor:default;">
+          <span class="ct-icon">📍</span>
+          <div>
+            <p class="ct-label">地址</p>
+            <p class="ct-val" style="color:rgba(255,255,255,.55);font-size:14px;line-height:1.6;">802 高雄市苓雅區和平一路 116 號<br>高師大和平校區 管理學院</p>
+          </div>
+        </div>
+        <a href="mailto:dctarn@mail.nknu.edu.tw" class="btn-white" style="margin-top:20px;text-align:center;display:block;">✉ 現在就寄信</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--clay);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
+
+<footer>
+  <div class="ft">
+    <div>
+      <div class="fb">
+        <div class="logo-mark-ft"><div style="background:var(--clay);border-radius:2px 0 0 0;"></div><div style="background:var(--olive);border-radius:0 2px 0 0;"></div><div style="background:var(--teal);border-radius:0 0 0 2px;"></div><div style="background:var(--purple);border-radius:0 0 2px 0;"></div></div>
+        <span class="ft-nm">AIM-I <span>· 高齡產業經營學士原住民專班</span></span>
+      </div>
+      <p class="ft-desc">國立高雄師範大學 管理學院<br>Bachelor's Degree Program in Ageing Industry Management for Indigenous Students<br>No.116, Heping 1st Rd., Lingya Dist., Kaohsiung 802, Taiwan</p>
+    </div>
+    <div class="fc"><h4>快速連結</h4><ul><li><a href="about.html">關於 AIM-I</a></li><li><a href="learn.html">學習內容</a></li><li><a href="people.html">我們的人</a></li><li><a href="collab.html">產學合作</a></li><li><a href="apply.html">招生申請</a></li><li><a href="apply.html#faq">常見問題</a></li></ul></div>
+    <div class="fc"><h4>學校資源</h4><ul><li><a href="https://w3.nknu.edu.tw" target="_blank">高師大官網</a></li><li><a href="#">管理學院</a></li><li><a href="#">原住民族學生資源中心</a></li><li><a href="#">獎助學金資訊</a></li></ul></div>
+  </div>
+  <div class="ft-b"><p>© 2026 National Kaohsiung Normal University · AIM-I Programme</p><div class="ft-soc"><a href="#">Instagram</a><a href="#">Facebook</a></div></div>
+</footer><script>
+const io = new IntersectionObserver((e)=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+let activeMega=null;
+const overlay=document.getElementById('mega-overlay');
+function openMega(id){if(activeMega)closeMega();const el=document.getElementById(id);if(!el)return;el.classList.add('open');overlay.classList.add('open');activeMega=el;}
+function closeMega(){if(activeMega){activeMega.classList.remove('open');activeMega=null;}overlay.classList.remove('open');}
+document.querySelectorAll('[data-mega]').forEach(a=>{a.addEventListener('click',function(e){const id=this.dataset.mega;if(activeMega&&activeMega.id===id){closeMega();return;}e.preventDefault();openMega(id);});});
+overlay.addEventListener('click',closeMega);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMega();});
+document.querySelectorAll('.mega-links a').forEach(a=>{a.addEventListener('click',()=>{setTimeout(closeMega,120);});});
+</script></body></html>
+<script>
+const io=new IntersectionObserver((e)=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+let activeMega=null;
+const overlay=document.getElementById('mega-overlay');
+function openMega(id){if(activeMega)closeMega();const el=document.getElementById(id);if(!el)return;el.classList.add('open');overlay.classList.add('open');activeMega=el;}
+function closeMega(){if(activeMega){activeMega.classList.remove('open');activeMega=null;}overlay.classList.remove('open');}
+document.querySelectorAll('[data-mega]').forEach(a=>{a.addEventListener('click',function(e){const id=this.dataset.mega;if(activeMega&&activeMega.id===id){closeMega();return;}e.preventDefault();openMega(id);});});
+overlay.addEventListener('click',closeMega);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMega();});
+document.querySelectorAll('.mega-links a').forEach(a=>{a.addEventListener('click',()=>{setTimeout(closeMega,120);});});
+</script>
+</body>
+</html>

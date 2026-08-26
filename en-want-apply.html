@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Want to Apply · AIM-I · Ageing Industry Management for Indigenous Students</title>
+<style>
+@font-face {
+  font-family: 'Iansui';
+  src: url('https://cdn.jsdelivr.net/gh/ButTaiwan/iansui@main/fonts/ttf/Iansui-Regular.ttf') format('truetype');
+  font-weight: normal; font-style: normal; font-display: swap;
+}
+
+@font-face {
+  font-family: 'Iansui';
+  src: url('https://cdn.jsdelivr.net/gh/ButTaiwan/iansui@main/fonts/ttf/Iansui-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* COUNTDOWN */
+.cd-wrap{background:var(--clay);padding:64px 5%;position:relative;overflow:hidden;}
+.cd-wrap::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cpolyline points='0,24 12,0 24,24 36,0 48,24' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/svg%3E");background-size:48px 24px;opacity:.05;}
+.cd-inner{max-width:1180px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.cd-label{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:20px;font-weight:700;}
+.cd-deadline{font-size:15px;color:rgba(255,255,255,.35);margin-bottom:32px;}
+.cd-boxes{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:28px;}
+.cd-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:20px 28px;min-width:100px;}
+.cd-num{font-family:'Iansui',serif;font-size:clamp(40px,6vw,72px);font-weight:900;color:#fff;line-height:1;display:block;}
+.cd-unit{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.12em;text-transform:uppercase;margin-top:8px;display:block;}
+.cd-over{font-family:'Iansui',serif;font-size:clamp(24px,4vw,42px);font-weight:700;color:#fff;display:none;}
+
+/* STEPS */
+.step-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.step-row::before{content:'';position:absolute;top:18px;left:12.5%;right:12.5%;height:2px;background:var(--border);z-index:0;}
+.step{padding-top:52px;padding-right:16px;text-align:left;position:relative;}
+.step-dot{position:absolute;top:4px;left:0;width:28px;height:28px;border-radius:50%;background:var(--clay);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;z-index:1;}
+.step h3{font-family:'Iansui',serif;font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.35;}
+.step p{font-size:14px;color:var(--mid);line-height:1.8;}
+.step-tag{display:inline-block;font-size:11px;color:var(--clay);background:#fae8e6;padding:3px 10px;border-radius:1px;margin-top:10px;}
+
+/* EVENTS TABLE */
+.ev-table{width:100%;border-collapse:collapse;}
+.ev-table th{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);font-weight:700;padding:12px 16px;border-bottom:2px solid var(--border);text-align:left;}
+.ev-table td{padding:18px 16px;border-bottom:1px solid var(--border);font-size:15px;vertical-align:top;}
+.ev-table tr:last-child td{border-bottom:none;}
+.ev-table tr:hover td{background:var(--parch);}
+.ev-badge{display:inline-block;font-size:11px;padding:3px 10px;border-radius:2px;font-weight:700;}
+.ev-upcoming{background:#E8F5E9;color:#2E7D32;}
+.ev-planned{background:#FFF8E1;color:#F57F17;}
+.ev-past{background:var(--fog);color:var(--mid);text-decoration:line-through;opacity:.5;}
+.ev-online{background:#E3F2FD;color:#1565C0;}
+
+/* CHECKLIST */
+.ck-list{list-style:none;}
+.ck-list li{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);font-size:16px;color:var(--dark);line-height:1.7;}
+.ck-list li:last-child{border-bottom:none;}
+.ck-icon{width:24px;height:24px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:3px;display:flex;align-items:center;justify-content:center;}
+.ck-icon.done{background:var(--olive);border-color:var(--olive);color:#fff;font-size:12px;}
+.ck-icon.now{background:var(--clay);border-color:var(--clay);color:#fff;font-size:11px;font-weight:700;}
+.ck-note{font-size:13px;color:var(--mid);margin-top:4px;display:block;}
+
+@media(max-width:900px){
+  .step-row{grid-template-columns:1fr 1fr;gap:32px 16px;}
+  .step-row::before{display:none;}
+  .cd-boxes{gap:8px;}
+  .cd-box{min-width:72px;padding:16px 16px;}
+}
+</style>
+</head>
+<body><div class="topbar">
+  <span>National Kaohsiung Normal University · College of Management</span>
+  <a href="https://w3.nknu.edu.tw" target="_blank">NKNU Website</a>
+</div>
+<nav>
+  <div class="brand">
+    <div class="brand-dot"></div>
+    <div class="brand-text">
+      <div class="brand-main" style="font-size:14px;">Ageing Industry Management for Indigenous Students</div>
+      <div class="brand-sub">AIM-I · National Kaohsiung Normal University</div>
+    </div>
+  </div>
+  <ul class="navlinks">
+    <li class="nav-item has-mega"><a href="en-about.html" data-mega="mega-about">About</a></li>
+    <li class="nav-item has-mega"><a href="en-learn.html" data-mega="mega-learn">Study</a></li>
+    <li class="nav-item has-mega"><a href="en-people.html" data-mega="mega-people">Our People</a></li>
+    <li class="nav-item has-mega"><a href="en-collab.html" data-mega="mega-collab">Collaborate</a></li>
+    <li class="nav-item has-mega"><a href="en-apply.html" data-mega="mega-apply" class="current">Apply</a></li>
+    <li><a href="en-apply.html" class="nav-apply">Apply Now</a></li>
+  </ul>
+</nav>
+<div class="mega-overlay" id="mega-overlay"></div>
+<div class="mega" id="mega-about">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">About AIM-I</p><h2 class="mega-headline">We redefine<br>the aging problem.</h2><p class="mega-desc">Taiwan's only ageing industry programme grounded in indigenous cultural knowledge. Come with curiosity — that's enough.</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-about.html">Who We Are</a></li><li><a href="en-about.html#belief">Our Beliefs</a></li><li><a href="en-about.html#stats">Key Numbers</a></li><li><a href="en-apply.html#faq">FAQ</a></li><li><a href="en-apply.html#contact" class="hl">✉ Contact Us</a></li></ul></div>
+  </div>
+</div>
+<div class="mega" id="mega-learn">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">Study</p><h2 class="mega-headline">What will<br>you master?</h2><p class="mega-desc">Three core competencies, four years of real-world learning. Start building your portfolio from day one.</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-learn.html">Three Core Competencies</a></li><li><a href="en-learn.html#journey">Four-Year Journey</a></li><li><a href="en-learn.html#activities">Programme Activities</a></li><li><a href="en-learn.html#careers">Career Pathways</a></li><li><a href="en-learn.html#news">News & Updates</a></li></ul></div>
+  </div>
+</div>
+<div class="mega" id="mega-people">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">Our People</p><h2 class="mega-headline">Meet the people<br>who walk with you.</h2><p class="mega-desc">Faculty, mentors, students — everyone here brings real stories and real questions.</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-people.html">David DC Tarn · Director</a></li><li><a href="en-people.html#faculty">Faculty</a></li><li><a href="en-people.html#mentors">Industry Mentors</a></li><li><a href="en-people.html#stories">Student Stories</a></li></ul></div>
+  </div>
+</div>
+<div class="mega" id="mega-collab">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">Collaborate</p><h2 class="mega-headline">Your real problems<br>are their best curriculum.</h2><p class="mega-desc">No formal proposal needed — a venue, a problem, or just an idea is enough to start.</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-collab.html">Silver Industry Field Visit</a></li><li><a href="en-collab.html#sprint">Ageing Service Sprint</a></li><li><a href="en-collab.html#mentor">Career Navigation Mentor</a></li><li><a href="mailto:dctarn@mail.nknu.edu.tw" class="hl">✉ Send a Collaboration Inquiry</a></li></ul></div>
+  </div>
+</div>
+<div class="mega" id="mega-apply">
+  <div class="mega-inner">
+    <div class="mega-left"><p class="mega-tag">Apply</p><h2 class="mega-headline">You're here.<br>That's a great start.</h2><p class="mega-desc">Certain or not, bring your curiosity. We respond to every question seriously.</p></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-apply.html">Admission Information</a></li><li><a href="en-apply.html#qualify">Eligibility</a></li><li><a href="en-apply.html#scholarship">Scholarships</a></li><li><a href="en-apply.html#faq">FAQ</a></li><li><a href="mailto:dctarn@mail.nknu.edu.tw" class="hl">✉ Contact Us Directly</a></li></ul></div>
+  </div>
+</div>
+<div class="page-hero">
+  <div class="page-hero-inner reveal">
+    <p class="page-eyebrow">I Want to Apply</p>
+    <h1 class="page-title">You've decided.<br><em>Here's what's next.</em></h1>
+    <p class="page-lead">Admission timeline, info sessions, required documents, application steps — all here.</p>
+  </div>
+  <div class="wave" style="background:var(--cream);"><svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:160px;"><path d="M0,85 C140,36 300,125 480,78 C660,32 820,112 1000,72 C1160,36 1300,105 1440,74 L1440,160 L0,160 Z" fill="#6B7A38" opacity=".68"/><path d="M0,100 C180,58 360,130 560,92 C760,54 940,118 1140,84 C1280,58 1380,100 1440,90 L1440,160 L0,160 Z" fill="#D4901C" opacity=".52"/><path d="M0,114 C200,84 400,136 620,108 C840,80 1060,128 1280,100 C1360,88 1408,106 1440,100 L1440,160 L0,160 Z" fill="#2A5870" opacity=".65"/><path d="M0,126 C240,108 480,142 720,124 C960,106 1200,138 1440,122 L1440,160 L0,160 Z" fill="#6A4A7A" opacity=".6"/><path d="M0,138 C300,128 600,146 900,136 C1200,126 1350,142 1440,136 L1440,160 L0,160 Z" fill="var(--clay)"/></svg></div>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="cd-wrap" id="countdown-section">
+  <div class="cd-inner">
+    <p class="cd-label">Days until application deadline</p>
+    <p class="cd-deadline" id="deadline-text">Academic Year 2026 · Deadline: [Please fill in the deadline, e.g. 15 March 2026]</p>
+    <div class="cd-boxes">
+      <div class="cd-box"><span class="cd-num" id="cd-days">--</span><span class="cd-unit">Days</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-hours">--</span><span class="cd-unit">Hours</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-mins">--</span><span class="cd-unit">Mins</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-secs">--</span><span class="cd-unit">Secs</span></div>
+    </div>
+    <p class="cd-over" id="cd-over">Applications are now closed. Contact us if you have questions.</p>
+    <a href="mailto:dctarn@mail.nknu.edu.tw" class="btn-white">✉ Questions? Ask us now</a>
+  </div>
+</div>
+
+<div class="wave" style="background:var(--clay);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
+
+<!-- STEPS -->
+<section>
+  <div class="mx">
+    <p class="eyebrow">Application Steps</p>
+    <h2 class="sh" style="margin-bottom:48px;">Four steps. Start here.</h2>
+    <div class="step-row reveal">
+      <div class="step">
+        <div class="step-dot">1</div>
+        <h3>Confirm Eligibility</h3>
+        <p>Indigenous identity + senior high school graduate (current or past). That's it.</p>
+        <span class="step-tag">Identity documentation</span>
+      </div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <h3>Prepare Your Portfolio</h3>
+        <p>Personal statement, study plan, transcript, and anything else that tells us who you are.</p>
+        <span class="step-tag">Per annual prospectus</span>
+      </div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <h3>Apply Online</h3>
+        <p>Fill in the application form, upload your portfolio, complete the fee payment.</p>
+        <span class="step-tag">During application period</span>
+      </div>
+      <div class="step">
+        <div class="step-dot">4</div>
+        <h3>Attend Interview</h3>
+        <p>Not an exam — a conversation for us to get to know you. Just bring your story.</p>
+        <span class="step-tag">Online or in-person</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--cream);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--teal)"/></svg></div>
+
+<!-- EVENTS -->
+<section style="background:var(--teal);padding:72px 5%;" id="events">
+  <div class="mx">
+    <p class="eyebrow eyebrow-lt">Info Sessions · Outreach Schedule</p>
+    <h2 class="sh sh-lt" style="margin-bottom:12px;">We'll come find you.</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.42);margin-bottom:36px;">Coming to an info session is the fastest way to get answers. Can't make it in person? Online sessions can be arranged anytime.</p>
+    <div style="background:var(--cream);border-radius:6px;overflow:hidden;">
+      <table class="ev-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Venue</th>
+            <th>Format</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>[To be filled]</strong><br><span style="font-size:13px;color:var(--mid);">e.g. 15 Nov 2025</span></td>
+            <td>[Time]</td>
+            <td>[School / Community / Venue Name]</td>
+            <td><span class="ev-badge ev-planned">In-person</span></td>
+            <td style="font-size:13px;color:var(--mid);">Info session / Booth / Education Fair</td>
+          </tr>
+          <tr>
+            <td><strong>[To be filled]</strong></td>
+            <td>[Time]</td>
+            <td>[Venue]</td>
+            <td><span class="ev-badge ev-planned">In-person</span></td>
+            <td style="font-size:13px;color:var(--mid);"></td>
+          </tr>
+          <tr>
+            <td><strong>[To be filled]</strong></td>
+            <td>[Time]</td>
+            <td>線上（Zoom / Google Meet）</td>
+            <td><span class="ev-badge ev-online">Online</span></td>
+            <td style="font-size:13px;color:var(--mid);">Link sent upon registration</td>
+          </tr>
+          <tr>
+            <td colspan="4" style="text-align:center;padding:24px;color:var(--mid);font-size:14px;">More sessions to be announced. Want us to visit your school or community? Let us know.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.35);margin-top:16px;">※ Schedule subject to change. Registered participants will be notified by email.</p>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--teal);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
+
+<!-- CHECKLIST -->
+<section id="checklist">
+  <div class="mx">
+    <div class="two-col reveal" style="gap:60px;align-items:start;">
+      <div>
+        <p class="eyebrow">Document Checklist</p>
+        <h2 class="sh" style="margin-bottom:28px;">What do you need to prepare?</h2>
+        <ul class="ck-list">
+          <li>
+            <div class="ck-icon done">✓</div>
+            <div>
+              <strong>Indigenous Identity Documentation</strong>
+              <span class="ck-note">Household registration copy or tribal certificate from household registration office</span>
+            </div>
+          </li>
+          <li>
+            <div class="ck-icon done">✓</div>
+            <div>
+              <strong>Academic Transcript</strong>
+              <span class="ck-note">High school transcript issued by your school</span>
+            </div>
+          </li>
+          <li>
+            <div class="ck-icon now">→</div>
+            <div>
+              <strong>Portfolio Materials</strong>
+              <span class="ck-note">Personal statement, study plan, work samples (per annual prospectus)</span>
+            </div>
+          </li>
+          <li>
+            <div class="ck-icon"></div>
+            <div>
+              <strong>Interview</strong>
+              <span class="ck-note">After passing initial review — online or in-person (per prospectus)</span>
+            </div>
+          </li>
+          <li>
+            <div class="ck-icon"></div>
+            <div>
+              <strong>Language Proficiency Certificate (TBC)</strong>
+              <span class="ck-note">Whether required depends on the annual prospectus. Contact us to confirm.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Not sure how to prepare?</p>
+        <h2 class="sh" style="margin-bottom:20px;">You don't have to<br>figure it out alone.</h2>
+        <p style="font-size:17px;color:var(--mid);line-height:1.95;margin-bottom:24px;">How to write your personal statement? What to include? What will they ask at the interview? You don't need to figure this out alone.</p>
+        <p style="font-size:17px;color:var(--mid);line-height:1.95;margin-bottom:32px;">Write to us or come to an info session — we respond to every question seriously.</p>
+        <div class="btns">
+          <a href="mailto:dctarn@mail.nknu.edu.tw" class="btn-fill">✉ Write to Prof. Tarn</a>
+          <a href="#events" class="btn-ghost">View info sessions</a>
+        </div>
+        <div class="quote-block" style="margin-top:28px;">
+          <p>"You're here. That's a great start. Certain or not — just bring your curiosity."</p>
+          <cite>— AIM-I</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--cream);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--earth)"/></svg></div>
+
+<!-- FINAL CTA -->
+<section style="background:var(--earth);padding:80px 5%;">
+  <div class="mx reveal" style="text-align:center;">
+    <p class="eyebrow eyebrow-lt">Next step</p>
+    <h2 style="font-family:'Iansui',serif;font-size:clamp(32px,5vw,56px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:20px;">You're ready.<br><span style="-webkit-text-stroke:1.5px rgba(255,255,255,.4);color:transparent;">Or you're not yet. That's okay too.</span></h2>
+    <p style="font-size:18px;color:rgba(255,255,255,.45);max-width:480px;margin:0 auto 36px;line-height:1.9;">The most important step right now is letting us know you exist. Write a letter, or come find us at an info session.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="mailto:dctarn@mail.nknu.edu.tw" class="btn-amber" style="font-size:16px;padding:16px 36px;">✉ Contact Us Now</a>
+      <a href="en-apply.html" class="btn-white" style="font-size:16px;padding:16px 28px;">Full Admission Info</a>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="background:var(--earth);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
+
+<footer>
+  <div class="ft">
+    <div>
+      <div class="fb">
+        <div class="logo-mark-ft"><div style="background:var(--clay);border-radius:2px 0 0 0;"></div><div style="background:var(--olive);border-radius:0 2px 0 0;"></div><div style="background:var(--teal);border-radius:0 0 0 2px;"></div><div style="background:var(--purple);border-radius:0 0 2px 0;"></div></div>
+        <span class="ft-nm">AIM-I <span>· Ageing Industry Management for Indigenous Students</span></span>
+      </div>
+      <p class="ft-desc">National Kaohsiung Normal University · College of Management<br>Bachelor's Degree Program in Ageing Industry Management for Indigenous Students<br>No.116, Heping 1st Rd., Lingya Dist., Kaohsiung 802, Taiwan</p>
+    </div>
+    <div class="fc"><h4>Quick Links</h4><ul><li><a href="en-about.html">About AIM-I</a></li><li><a href="en-learn.html">Study</a></li><li><a href="en-people.html">Our People</a></li><li><a href="en-collab.html">Collaborate</a></li><li><a href="en-apply.html">Apply</a></li><li><a href="en-apply.html#faq">FAQ</a></li></ul></div>
+    <div class="fc"><h4>University Resources</h4><ul><li><a href="https://w3.nknu.edu.tw" target="_blank">NKNU Website</a></li><li><a href="#">College of Management</a></li><li><a href="#">Indigenous Student Resource Centre</a></li><li><a href="#">Scholarship Information</a></li></ul></div>
+  </div>
+  <div class="ft-b"><p>© 2026 National Kaohsiung Normal University · AIM-I Programme · All Rights Reserved.</p><div class="ft-soc"><a href="#">Instagram</a><a href="#">Facebook</a></div></div>
+</footer><script>
+const io = new IntersectionObserver((e)=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+let activeMega=null;
+const overlay=document.getElementById('mega-overlay');
+function openMega(id){if(activeMega)closeMega();const el=document.getElementById(id);if(!el)return;el.classList.add('open');overlay.classList.add('open');activeMega=el;}
+function closeMega(){if(activeMega){activeMega.classList.remove('open');activeMega=null;}overlay.classList.remove('open');}
+document.querySelectorAll('[data-mega]').forEach(a=>{a.addEventListener('click',function(e){const id=this.dataset.mega;if(activeMega&&activeMega.id===id){closeMega();return;}e.preventDefault();openMega(id);});});
+overlay.addEventListener('click',closeMega);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMega();});
+document.querySelectorAll('.mega-links a').forEach(a=>{a.addEventListener('click',()=>{setTimeout(closeMega,120);});});
+</script></body></html>

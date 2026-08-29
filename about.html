@@ -191,19 +191,28 @@ footer{background:var(--earth);padding:52px 5% 32px;}
   .topbar>div a[href*="w3.nknu.edu.tw"],
   .topbar>div span[style*="rgba(255,255,255,.15)"]{display:none!important;}
 
-  nav{height:60px!important;min-height:0;align-items:center!important;padding:0 4%!important;top:36px!important;
+  nav{display:grid!important;grid-template-columns:38px 1fr 38px;height:74px!important;min-height:0;align-items:center!important;padding:0 4%!important;top:36px!important;
+    background:var(--cream,#F5F0E2)!important; /* desktop's nav background is a cream-to-dark-brown
+      gradient (cream under the left-aligned logo, dark under the nav links to its right); now
+      that the logo is centered it would cross into the dark half and its own dark-colored text
+      would lose contrast against it, so mobile gets a flat cream bar instead -- the logo reads
+      the same wherever it sits, full width. */
+    border-bottom:1px solid rgba(0,0,0,.08)!important;
     backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
     z-index:261!important;} /* nav creates its own stacking context (position+z-index);
-      it must outrank .nav-scrim (240) or its child .navlinks would paint underneath the scrim */
-  .brand{gap:8px;}
-  .brand img{height:30px!important;width:auto!important;}
+      it must outrank .nav-scrim (240) or its child .navlinks would paint underneath the scrim.
+      grid-template-columns reserves a spacer column matching the hamburger's width on the
+      left, so the centered logo in the middle column is optically centered in the bar, not
+      just centered between the padding edges. */
+  .brand{grid-column:2;justify-self:center!important;gap:8px;}
+  .brand img{height:clamp(40px,13vw,56px)!important;width:auto!important;max-width:100%!important;}
 
-  body{padding-top:96px!important;}
-  [id]{scroll-margin-top:96px!important;}
+  body{padding-top:110px!important;}
+  [id]{scroll-margin-top:110px!important;}
 
   .mega,.mega-overlay{display:none!important;}
 
-  .navlinks{position:fixed;top:96px;left:0;right:0;bottom:0;margin:0;
+  .navlinks{position:fixed;top:110px;left:0;right:0;bottom:0;margin:0;
     background:rgba(23,15,9,.98);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
     display:flex!important;flex-direction:column;align-items:stretch;gap:0;
     padding:8px 6% 48px;overflow-y:auto;z-index:250;
@@ -229,8 +238,8 @@ footer{background:var(--earth);padding:52px 5% 32px;}
   .drawer-sub a.hl{color:var(--amber)!important;}
   .navlinks a.nav-apply{justify-content:center;margin-top:4px;}
 
-  .hamburger{display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;position:relative;z-index:260;}
-  .hamburger span{display:block;width:24px;height:2px;background:#EAD9C8;border-radius:2px;transition:transform .25s ease,opacity .2s ease;}
+  .hamburger{grid-column:3;justify-self:end;display:flex!important;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;position:relative;z-index:260;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--dark,#2A1E14);border-radius:2px;transition:transform .25s ease,opacity .2s ease;} /* dark bars: the mobile nav bar is now cream, not the dark gradient */
   .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .hamburger.open span:nth-child(2){opacity:0;}
   .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}

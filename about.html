@@ -86,6 +86,8 @@ section{padding:72px 5%;}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.five-col{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.mark-ic{width:22px;height:22px;border-radius:3px;margin:4px 0 22px;transform:rotate(45deg);}
 /* PH */
 .ph{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:3px;background-color:var(--fog);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill-opacity='.14'%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(50,20) rotate(45)' fill='%23C42016'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(20,50) rotate(45)' fill='%236B7A38'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(80,50) rotate(45)' fill='%236A4A7A'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(50,80) rotate(45)' fill='%232A5870'/%3E%3Crect x='-8' y='-8' width='16' height='16' rx='2' transform='translate(50,50) rotate(45)' fill='%23D4901C' fill-opacity='.22'/%3E%3C/g%3E%3C/svg%3E"),repeating-linear-gradient(45deg,rgba(255,255,255,.4) 0px,rgba(255,255,255,.4) 1px,transparent 1px,transparent 15px),repeating-linear-gradient(-45deg,rgba(255,255,255,.4) 0px,rgba(255,255,255,.4) 1px,transparent 1px,transparent 15px);background-size:52% auto,auto,auto;background-position:center center,0 0,0 0;background-repeat:no-repeat,repeat,repeat;}
 /* QUOTE */
@@ -105,12 +107,15 @@ section{padding:72px 5%;}
 .dark-section{padding:72px 5%;position:relative;overflow:hidden;}
 .dark-section::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cpolyline points='0,24 12,0 24,24 36,0 48,24' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/svg%3E");background-size:48px 24px;opacity:.04;}
 /* STAT ROW */
-.stats{background:var(--clay);display:grid;grid-template-columns:repeat(4,1fr);}
-.stat{padding:28px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.12);}
+.stats-band{background:var(--clay);padding:60px 5% 0;}
+.stats-eyebrow{text-align:center;font-size:14px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.55);margin-bottom:12px;}
+.stats-eyebrow::before{content:'◆ ';color:var(--amber);}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:40px 24px 56px;text-align:center;border-right:1px solid rgba(255,255,255,.12);}
 .stat:last-child{border-right:none;}
-.stat-n{font-family:var(--serif);font-size:clamp(26px,3vw,40px);font-weight:900;color:#fff;display:block;line-height:1.1;}
-.stat-l{font-size:16px;color:rgba(255,255,255,.65);margin-top:6px;line-height:1.6;}
-.stat-d{font-size:13px;color:rgba(255,255,255,.4);margin-top:10px;line-height:1.7;}
+.stat-n{font-family:var(--serif);font-size:clamp(34px,3.8vw,54px);font-weight:900;color:#fff;display:block;line-height:1.1;}
+.stat-l{font-size:19px;color:rgba(255,255,255,.72);margin-top:8px;line-height:1.6;}
+.stat-d{font-size:16px;color:rgba(255,255,255,.5);margin-top:14px;line-height:1.75;}
 /* BUTTONS */
 .btn-fill{background:var(--clay);color:var(--white);padding:15px 34px;border-radius:3px;font-size:16px;font-weight:700;letter-spacing:.04em;transition:background .2s;display:inline-block;}
 .btn-fill:hover{background:var(--clay-lt);}
@@ -173,7 +178,7 @@ footer{background:var(--earth);padding:52px 5% 32px;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 /* RESPONSIVE */
 @media(max-width:900px){
-  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
+  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft,.five-col{grid-template-columns:1fr;}
   .stats{grid-template-columns:1fr 1fr;}
   .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
   .fq-grid .fq:nth-child(even){padding-left:0;}
@@ -303,7 +308,7 @@ footer{background:var(--earth);padding:52px 5% 32px;}
   </div>
 </div>
 <div class="page-hero" style="padding-top:32px;"><div class="page-hero-inner reveal"><p class="page-eyebrow">關於 AIM-I</p><h1 class="page-title">高齡產業需要的，<br>不只是懂照護的人，<br>而是能夠<em>創造價值的人。</em></h1><p class="page-lead">我們培育的人，懂得如何在市場邏輯之外，看見長輩的生命，然後把這份看見，轉化為可以經營、可以設計、可以持續的產業。</p></div><div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:160px;"><path d="M0,85 C140,36 300,125 480,78 C660,32 820,112 1000,72 C1160,36 1300,105 1440,74 L1440,160 L0,160 Z" fill="#6B7A38" opacity=".68"/><path d="M0,100 C180,58 360,130 560,92 C760,54 940,118 1140,84 C1280,58 1380,100 1440,90 L1440,160 L0,160 Z" fill="#D4901C" opacity=".52"/><path d="M0,114 C200,84 400,136 620,108 C840,80 1060,128 1280,100 C1360,88 1408,106 1440,100 L1440,160 L0,160 Z" fill="#2A5870" opacity=".65"/><path d="M0,126 C240,108 480,142 720,124 C960,106 1200,138 1440,122 L1440,160 L0,160 Z" fill="#6A4A7A" opacity=".6"/><path d="M0,138 C300,128 600,146 900,136 C1200,126 1350,142 1440,136 L1440,160 L0,160 Z" fill="var(--clay)"/></svg></div></div>
-<div class="stats" id="stats"><div class="stat"><span class="stat-n">20%</span><p class="stat-l">2025年台灣進入超高齡社會</p><p class="stat-d">當 65 歲以上人口占比達 20%，即符合國際定義的超高齡社會門檻。高齡產業不是十年後的事，是現在進行式。</p></div><div class="stat"><span class="stat-n">58萬+</span><p class="stat-l">原住民族人口<br>高齡服務需求快速成長</p><p class="stat-d">全國原住民族人口持續成長，部落族人老化速度又快於全國平均，照顧與陪伴的需求正在擴大。</p></div><div class="stat"><span class="stat-n">唯一</span><p class="stat-l">全台以文化知識為核心<br>的高齡產業學程</p><p class="stat-d">目前全台大專校院中，AIM-I 是唯一把原住民族文化知識視為核心能力、而非附加內容的高齡產業經營學程。</p></div><div class="stat"><span class="stat-n">第1年</span><p class="stat-l">即累積可驗證的<br>真實學習成果</p><p class="stat-d">從大一課程開始，你就能透過實作與業師陪跑，逐步累積可以放進履歷、說給業者聽的具體成果。</p></div></div>
+<div class="stats-band" id="stats"><p class="stats-eyebrow">關鍵數字</p><div class="stats"><div class="stat"><span class="stat-n">20%</span><p class="stat-l">2025年台灣進入超高齡社會</p><p class="stat-d">當 65 歲以上人口占比達 20%，即符合國際定義的超高齡社會門檻。高齡產業不是十年後的事，是現在進行式。</p></div><div class="stat"><span class="stat-n">58萬+</span><p class="stat-l">原住民族人口<br>高齡服務需求快速成長</p><p class="stat-d">全國原住民族人口持續成長，部落族人老化速度又快於全國平均，照顧與陪伴的需求正在擴大。</p></div><div class="stat"><span class="stat-n">唯一</span><p class="stat-l">全台以文化知識為核心<br>的高齡產業學程</p><p class="stat-d">目前全台大專校院中，AIM-I 是唯一把原住民族文化知識視為核心能力、而非附加內容的高齡產業經營學程。</p></div><div class="stat"><span class="stat-n">第1年</span><p class="stat-l">即累積可驗證的<br>真實學習成果</p><p class="stat-d">從大一課程開始，你就能透過實作與業師陪跑，逐步累積可以放進履歷、說給業者聽的具體成果。</p></div></div></div>
 <div class="wave" style="background:var(--clay);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:80px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
 <section id="belief"><div class="mx"><div class="two-col reveal">
   <div><p class="eyebrow">文化，是你的產業競爭力</p><h2 class="sh">你不需要離開你的文化，<br>才能進入產業。</h2><p style="font-size:18px;color:var(--mid);line-height:2.0;margin-bottom:20px;">台灣的高齡服務教育存在一個長期的斷層：照護端懂人，卻不懂市場；管理端懂市場，卻不懂人。AIM-I 想培育的，是能站在這道斷層中間、把兩端連起來的人。</p><p style="font-size:18px;color:var(--mid);line-height:2.0;margin-bottom:20px;">原住民族社群世代累積的照護智慧，是填補這道斷裂最需要的能量。沒有哪個管理系在問這個問題，直到 AIM-I 出現。</p><p style="font-size:18px;color:var(--mid);line-height:2.0;">這裡歡迎<strong style="color:var(--dark);">確定自己想做什麼的人</strong>，也歡迎<strong style="color:var(--dark);">還在摸索的人</strong>。你不需要帶著完整的答案來，帶著你的好奇心就夠了。</p>
@@ -311,7 +316,19 @@ footer{background:var(--earth);padding:52px 5% 32px;}
   <div class="diam-row"><span class="diam" style="width:10px;height:10px;"></span><span class="diam" style="width:14px;height:14px;opacity:.85;"></span><span class="diam" style="width:10px;height:10px;opacity:.5;"></span></div></div>
   <div><div class="ph" style="aspect-ratio:4/3;background-color:#e0ebd0;margin-bottom:10px;"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"><div class="ph" style="aspect-ratio:1/1;background-color:#e4eff5;"></div><div class="ph" style="aspect-ratio:1/1;background-color:#f1dfae;"></div></div></div>
 </div></div></section>
-<div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:80px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--clay)"/></svg></div>
+<section id="mark" style="background:var(--parch);padding-top:56px;"><div class="mx">
+  <p class="eyebrow">關於我們的標誌</p>
+  <h2 class="sh" style="margin-bottom:14px;">標誌裡，藏著四個信念。</h2>
+  <p style="font-size:17px;color:var(--mid);line-height:1.9;margin-bottom:36px;max-width:700px;">AIM-I 的圖騰不只是設計。四個菱形、四種紋路，說的正是我們畢業生帶得走的四個能力：中間那顆小菱形，是把它們連在一起的文化。</p>
+  <div class="five-col">
+    <div class="card card-r"><div class="mark-ic" style="background:var(--clay);"></div><h3>高齡 Ageing</h3><p>像山徑蜿蜒的紋路，提醒我們：老去是一段旅程，不是一個待解決的問題。</p></div>
+    <div class="card card-g"><div class="mark-ic" style="background:var(--olive);"></div><h3>原住民族 Indigenous</h3><p>紋路取自部落織品的幾何語言，這是我們最深的文化根基。</p></div>
+    <div class="card card-p"><div class="mark-ic" style="background:var(--purple);"></div><h3>社區實踐 Community</h3><p>一圈圈向外擴散的漣漪，是部落與社區共好共學的樣子。</p></div>
+    <div class="card card-t"><div class="mark-ic" style="background:var(--teal);"></div><h3>產業經營 Industry</h3><p>如海浪般起伏的紋路，代表產業經營裡的挑戰與機會。</p></div>
+    <div class="card card-a"><div class="mark-ic" style="background:var(--amber);"></div><h3>文化 Culture</h3><p>站在正中央、連結四方的，是文化：AIM-I 所有學習的起點。</p></div>
+  </div>
+</div></section>
+<div class="wave" style="background:var(--parch);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:80px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--clay)"/></svg></div>
 <section class="dark-section" style="background:var(--clay);"><div class="mx"><p class="eyebrow eyebrow-lt">我們的使命</p><h2 class="sh sh-lt" style="max-width:600px;margin-bottom:36px;">高齡不只是照護議題，它是一個正在成形的巨大產業。需要有人設計它的服務，需要有人經營它的市場，需要有人讓它在文化與商業之間找到真正的位置。</h2>
 <div class="three-col reveal" style="gap:20px;">
   <div class="card card-r" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);"><h3 style="color:#fff;">文化 × 高齡</h3><p style="color:rgba(255,255,255,.55);">你對部落長輩的理解，你的文化視角，是高齡產業最難用商學院訓練複製出來的東西。</p></div>

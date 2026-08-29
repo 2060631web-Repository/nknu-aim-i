@@ -77,7 +77,8 @@ section{padding:72px 5%;}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
 /* PH */
-.ph{background:var(--fog);border:1px solid var(--border);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--mid);letter-spacing:.06em;text-align:center;}
+.ph{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:3px;background-color:var(--fog);background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.4) 0px,rgba(255,255,255,.4) 1px,transparent 1px,transparent 15px),repeating-linear-gradient(-45deg,rgba(255,255,255,.4) 0px,rgba(255,255,255,.4) 1px,transparent 1px,transparent 15px);}
+.ph-tag{position:absolute;left:12px;bottom:12px;font-size:11px;letter-spacing:.06em;color:#fff;background:rgba(42,30,20,.55);padding:4px 10px;border-radius:2px;}
 /* QUOTE */
 .quote-block{background:var(--cream);border-left:4px solid var(--clay);padding:20px 24px;margin:22px 0;border-radius:0 4px 4px 0;}
 .quote-block p{font-family:var(--serif);font-size:20px;color:var(--dark);line-height:2.0;font-weight:500;}
@@ -360,7 +361,7 @@ footer{background:var(--earth);padding:52px 5% 32px;}
           <p>"Your real problems are the best curriculum. Whatever the size of your organisation, there is a place for you to contribute."</p>
           <cite>— AIM-I Collaboration Philosophy</cite>
         </div>
-        <div class="ph" style="aspect-ratio:4/3;background:#e0ebd0;"><svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(107,122,56,.65);"><circle cx="9" cy="12" r="6.1"/><circle cx="15" cy="12" r="6.1"/></svg><span>Collaboration photo</span></div>
+        <div class="ph" style="aspect-ratio:4/3;background-color:#e0ebd0;"><span class="ph-tag">Collaboration photo</span></div>
       </div>
     </div>
   </div>

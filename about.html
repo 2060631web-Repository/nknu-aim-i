@@ -76,7 +76,7 @@ nav{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rgba(
 /* CONTENT */
 section{padding:72px 5%;}
 .mx{max-width:1180px;margin:0 auto;}
-.eyebrow{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.eyebrow{font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:900;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .eyebrow::before{content:'◆';font-size:9px;}
 .eyebrow-lt{color:rgba(255,255,255,.4);}.eyebrow-lt::before{color:var(--amber);}
 .sh{font-family:var(--serif);font-size:clamp(22px,3.2vw,38px);font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:18px;}
@@ -87,6 +87,8 @@ section{padding:72px 5%;}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
 .five-col{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.why-aimi-grid{display:grid;grid-template-columns:1fr 48px 1fr;gap:0;align-items:center;}
+.why-aimi-arrow{text-align:center;font-size:28px;color:var(--clay,#C42016);}
 .mark-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px;}
 .mark-ic{width:22px;height:22px;border-radius:3px;margin:4px 0 22px;transform:rotate(45deg);}
 /* PH */
@@ -182,7 +184,8 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 .reveal.visible{opacity:1;transform:translateY(0);}
 /* RESPONSIVE */
 @media(max-width:900px){
-  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft,.five-col,.mark-grid{grid-template-columns:1fr;}
+  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft,.five-col,.mark-grid,.why-aimi-grid{grid-template-columns:1fr;gap:20px!important;}
+  .why-aimi-arrow{transform:rotate(90deg);}
   .stats{grid-template-columns:1fr 1fr;}
   .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
   .fq-grid .fq:nth-child(even){padding-left:0;}
@@ -302,7 +305,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 <div class="mega" id="mega-learn">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">學習</p><h2 class="mega-headline">知識是地圖，<br>能力是步伐，<br><em>文化是方向。</em></h2><p class="mega-desc">三個核心能力，搭配四年真實場域的學習旅程。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li><li><a href="learn.html#news">最新消息</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li><li><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">最新消息</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-people">
@@ -314,7 +317,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 <div class="mega" id="mega-collab">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">產學合作</p><h2 class="mega-headline">你的真實問題，<br>是他們最好的教材。</h2><p class="mega-desc">不需要完整的合作計畫，一個想法就可以是開始。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="collab.html">銀色產業前線見學</a></li><li><a href="collab.html#sprint">高齡產業解題松</a></li><li><a href="collab.html#mentor">高齡產業圖鑑</a></li><li><a href="collab.html#collab-intent" class="hl">共場．合作意向</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="collab.html#fieldvisit">銀色產業前線見學</a></li><li><a href="collab.html#sprint">高齡產業解題松</a></li><li><a href="collab.html#mentor">高齡產業圖鑑</a></li><li><a href="collab.html#collab-intent" class="hl">共場．合作意向</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-apply">
@@ -374,12 +377,14 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 
 <div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:80px;display:block;width:100%;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--parch,#EDE5D0)"/></svg></div>
 
-<section style="background:var(--parch,#EDE5D0);padding:72px 5%;" id="belief">
+<section style="background:var(--parch,#EDE5D0);padding:72px 5%;" id="why-aimi">
   <div class="mx">
     <p class="eyebrow">為什麼需要 AIM-I</p>
-    <h2 class="sh" style="margin-bottom:12px;">現行教育的斷裂，<br>正是我們存在的理由。</h2>
-    <p class="lead-text" style="margin-bottom:44px;">台灣的高齡服務教育長期存在一個結構性問題：照護端與管理端各自專精，卻缺乏跨域整合的人才。</p>
-    <div style="display:grid;grid-template-columns:1fr 48px 1fr;gap:0;align-items:center;">
+    <h2 class="sh" style="margin-bottom:12px;">當高齡社會正在改變，<br>人才培育也需要新的想像。</h2>
+    <p class="lead-text reveal" style="margin-bottom:16px;">過去，高齡相關教育多從照護、健康、社福或管理等不同專業出發，各自累積了重要的知識與實務。</p>
+    <p class="lead-text reveal" style="margin-bottom:16px;">但當高齡走進每一個人的生活、家庭、社區與產業，我們需要更多能跨越專業邊界的人：理解高齡，也理解文化；看得見人的需要，也有能力連結社區、服務與經營。</p>
+    <p style="font-size:20px;color:var(--clay);font-weight:700;margin-bottom:44px;">AIM-I，就從這個新的需要開始。</p>
+    <div class="why-aimi-grid">
       <!-- Left: Problem -->
       <div style="background:var(--white,#FDFAF4);border:1px solid var(--border,#C8BFA8);border-radius:6px;padding:28px;">
         <h3 style="color:#C03020;font-size:15px;font-weight:700;margin-bottom:20px;font-family:'Iansui',sans-serif;">⚡ 現行教育的斷裂</h3>
@@ -418,7 +423,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       </div>
 
       <!-- Arrow -->
-      <div style="text-align:center;font-size:28px;color:var(--clay,#C42016);">→</div>
+      <div class="why-aimi-arrow">→</div>
 
       <!-- Right: Solution -->
       <div style="background:var(--teal,#2A5870);border-radius:6px;padding:28px;color:#fff;">
@@ -465,16 +470,16 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
     <div style="position:absolute;inset:0;pointer-events:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%23ffffff' opacity='.15'/%3E%3C/svg%3E&quot;);background-size:40px 40px;"></div>
     <div style="position:relative;z-index:1;max-width:440px;">
       <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">給未來的學生</p>
-      <h3 style="font-family:'Noto Serif TC','Iansui',serif;font-size:clamp(20px,3vw,30px);font-weight:700;color:#fff;margin-bottom:16px;line-height:1.25;">你的文化，<br>就是你的產業競爭力。</h3>
-      <p style="font-size:16px;color:rgba(255,255,255,.65);line-height:1.9;font-family:'Iansui',sans-serif;">你不需要離開你的文化才能進入產業。你對部落長輩的理解、你的語言、你的生命脈絡，在高齡產業裡，這些是最難被取代的管理能力。市場正在等一個同時懂文化、懂高齡、懂經營的人。</p>
+      <h3 style="font-family:'Noto Serif TC','Iansui',serif;font-size:clamp(20px,3vw,30px);font-weight:700;color:#fff;margin-bottom:16px;line-height:1.25;">你的文化，<br>就是你看見未來的力量。</h3>
+      <p style="font-size:16px;color:rgba(255,255,255,.65);line-height:1.9;font-family:'Iansui',sans-serif;">你帶來的語言、文化、對部落長輩的理解，以及一路走來的生命經驗，都會讓你看見別人未必看見的事。在 AIM-I，我們陪你把這些理解帶進高齡、社區與產業，學習管理、設計與經營，也慢慢找到屬於自己的位置。未來可以走多遠，等你自己來發現。</p>
     </div>
   </div>
   <div style="background:var(--purple,#6A4A7A);padding:52px 5%;position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;pointer-events:none;background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Cpolygon points='25,3 47,25 25,47 3,25' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E&quot;);background-size:50px 50px;opacity:.08;"></div>
     <div style="position:relative;z-index:1;max-width:440px;">
       <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">給部落與長輩們</p>
-      <h3 style="font-family:'Noto Serif TC','Iansui',serif;font-size:clamp(20px,3vw,30px);font-weight:700;color:#fff;margin-bottom:16px;line-height:1.25;">您的生命，<br>是我們最重要的教材。</h3>
-      <p style="font-size:16px;color:rgba(255,255,255,.65);line-height:1.9;font-family:'Iansui',sans-serif;">我們培育的學生，走進部落和日照中心，不是去「服務」，而是去學習如何把您的生命智慧，轉化為可以永續經營的產業。您的故事，是我們最重要的案例教材。</p>
+      <h3 style="font-family:'Noto Serif TC','Iansui',serif;font-size:clamp(20px,3vw,30px);font-weight:700;color:#fff;margin-bottom:16px;line-height:1.25;">您的生命經驗，<br>是我們珍惜的知識。</h3>
+      <p style="font-size:16px;color:rgba(255,255,255,.65);line-height:1.9;font-family:'Iansui',sans-serif;">我們希望學生走進部落與高齡生活的現場，先學會聆聽，再學會理解。聽您說生活、說土地、說文化，也聽您說希望未來成為什麼樣子。因為我們相信，高齡產業的未來，不應該只在教室裡被想像，也應該和真正生活在其中的人一起思考。您走過的路，也能陪著下一個世代，看見更遠的地方。</p>
     </div>
   </div>
 </div>

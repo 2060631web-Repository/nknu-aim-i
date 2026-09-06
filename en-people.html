@@ -75,7 +75,7 @@ nav{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rgba(
 /* CONTENT */
 section{padding:72px 5%;}
 .mx{max-width:1180px;margin:0 auto;}
-.eyebrow{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.eyebrow{font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:900;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .eyebrow::before{content:'◆';font-size:9px;}
 .eyebrow-lt{color:rgba(255,255,255,.4);}.eyebrow-lt::before{color:var(--amber);}
 .sh{font-family:var(--serif);font-size:clamp(22px,3.2vw,38px);font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:18px;}
@@ -85,6 +85,7 @@ section{padding:72px 5%;}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.mentor-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 /* PH */
 .ph{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:3px;background-color:var(--fog);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill-opacity='.14'%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(50,20) rotate(45)' fill='%23C42016'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(20,50) rotate(45)' fill='%236B7A38'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(80,50) rotate(45)' fill='%236A4A7A'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(50,80) rotate(45)' fill='%232A5870'/%3E%3Crect x='-8' y='-8' width='16' height='16' rx='2' transform='translate(50,50) rotate(45)' fill='%23D4901C' fill-opacity='.22'/%3E%3C/g%3E%3C/svg%3E"),repeating-linear-gradient(45deg,rgba(255,255,255,.4) 0px,rgba(255,255,255,.4) 1px,transparent 1px,transparent 15px),repeating-linear-gradient(-45deg,rgba(255,255,255,.4) 0px,rgba(255,255,255,.4) 1px,transparent 1px,transparent 15px);background-size:52% auto,auto,auto;background-position:center center,0 0,0 0;background-repeat:no-repeat,repeat,repeat;}
 /* QUOTE */
@@ -174,7 +175,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 .reveal.visible{opacity:1;transform:translateY(0);}
 /* RESPONSIVE */
 @media(max-width:900px){
-  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
+  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft,.mentor-grid{grid-template-columns:1fr;}
   .faculty-card{grid-template-columns:1fr!important;gap:24px!important;padding:24px!important;}
   .stats{grid-template-columns:1fr 1fr;}
   .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
@@ -295,7 +296,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 <div class="mega" id="mega-learn">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">Study</p><h2 class="mega-headline">Knowledge is the map.<br>Competency is the stride.<br><em>Culture is the direction.</em></h2><p class="mega-desc">Three core competencies, four years of real-world learning. Start building your portfolio from day one.</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="en-learn.html">Three Core Competencies</a></li><li><a href="en-learn.html#journey">Four-Year Journey</a></li><li><a href="en-learn.html#activities">Programme Activities</a></li><li><a href="en-learn.html#careers">Career Pathways</a></li><li><a href="en-learn.html#news">News & Updates</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-learn.html">Three Core Competencies</a></li><li><a href="en-learn.html#journey">Four-Year Journey</a></li><li><a href="en-learn.html#activities">Programme Activities</a></li><li><a href="en-learn.html#careers">Career Pathways</a></li><li><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">News &amp; Updates</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-people">
@@ -307,7 +308,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 <div class="mega" id="mega-collab">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">Collaborate</p><h2 class="mega-headline">True learning never happens in a classroom.<br>It happens where problems have no name yet — and that place is your field.</h2><p class="mega-desc">No formal proposal needed — a venue, a problem, or just an idea is enough to start.</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="en-collab.html">Silver Industry Field Visit</a></li><li><a href="en-collab.html#sprint">Ageing Industry Sprint</a></li><li><a href="en-collab.html#mentor">Ageing Industry Field Guide</a></li><li><a href="en-collab.html#collab-intent" class="hl">Join Our Field</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-collab.html#fieldvisit">Silver Industry Field Visit</a></li><li><a href="en-collab.html#sprint">Ageing Industry Sprint</a></li><li><a href="en-collab.html#mentor">Ageing Industry Field Guide</a></li><li><a href="en-collab.html#collab-intent" class="hl">Join Our Field</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-apply">
@@ -329,19 +330,19 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;" id="faculty-tabs">
       <button onclick="showFaculty('tarn')" id="tab-tarn"
         style="font-family:'Iansui',sans-serif;font-size:17px;padding:12px 28px;border-radius:3px;border:2px solid var(--clay);background:var(--clay);color:#fff;cursor:pointer;font-weight:700;transition:all .2s;" id="tab-tarn">
-        譚大純
+        譚大純<span style="font-size:12px;font-weight:400;margin-left:2px;">博士</span>
       </button>
       <button onclick="showFaculty('huang')" id="tab-huang"
         style="font-family:'Iansui',sans-serif;font-size:17px;padding:12px 28px;border-radius:3px;border:2px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;font-weight:500;transition:all .2s;">
-        黃曼莉
+        黃曼莉<span style="font-size:12px;font-weight:400;margin-left:2px;">博士</span>
       </button>
       <button onclick="showFaculty('yang')" id="tab-yang"
         style="font-family:'Iansui',sans-serif;font-size:17px;padding:12px 28px;border-radius:3px;border:2px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;font-weight:500;transition:all .2s;">
-        楊秀燕
+        楊秀燕<span style="font-size:12px;font-weight:400;margin-left:2px;">博士</span>
       </button>
       <button onclick="showFaculty('yen')" id="tab-yen"
         style="font-family:'Iansui',sans-serif;font-size:17px;padding:12px 28px;border-radius:3px;border:2px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;font-weight:500;transition:all .2s;">
-        顏思婷
+        顏思婷<span style="font-size:12px;font-weight:400;margin-left:2px;">博士</span>
       </button>
     </div>
 
@@ -350,7 +351,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       <div class="ph" style="aspect-ratio:3/4;background-color:#fae8e6;"></div>
       <div>
         <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">◆ Professor &amp; Dean of Management · Programme Director</p>
-        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">David DC Tarn</h3>
+        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">David DC Tarn,<span style="font-size:.35em;font-weight:500;color:var(--mid);margin-left:8px;">Ph.D.</span></h3>
         <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">譚大純 David DC Tarn</p>
         <div style="margin-bottom:20px;"><p style="font-size:14px;color:var(--mid);margin-bottom:4px;font-family:'Iansui',sans-serif;"><strong style="color:var(--dark);">Highest Degree</strong>&ensp;PhD in Business Administration, NCKU</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
@@ -383,8 +384,8 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       <div class="ph" style="aspect-ratio:3/4;background-color:#edf3e0;"></div>
       <div>
         <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">◆ Assistant Professor · Programme Adviser</p>
-        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">Huang Man-Li</h3>
-        <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">黃曼莉 Huang Man-Li</p>
+        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">Huang Man-Li,<span style="font-size:.35em;font-weight:500;color:var(--mid);margin-left:8px;">Ph.D.</span></h3>
+        <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">Man-Li｜Assistant Professor・Pangcah / Amis</p>
         <div style="margin-bottom:20px;"><p style="font-size:14px;color:var(--mid);margin-bottom:4px;font-family:'Iansui',sans-serif;"><strong style="color:var(--dark);">Highest Degree</strong>&ensp;PhD in Design, Lancaster University, UK</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
           <span style="font-size:14px;background:#edf3e0;color:var(--olive);padding:5px 14px;border-radius:2px;font-family:'Iansui',sans-serif;">Decolonising Design</span>
@@ -415,7 +416,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       <div class="ph" style="aspect-ratio:3/4;background-color:#e4eff5;"></div>
       <div>
         <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">◆ Faculty · Professional Courses</p>
-        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">Yang Hsiu-Yen</h3>
+        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">Yang Hsiu-Yen,<span style="font-size:.35em;font-weight:500;color:var(--mid);margin-left:8px;">Ph.D.</span></h3>
         <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">楊秀燕 Yang Hsiu-Yen</p>
         <div style="margin-bottom:20px;"><p style="font-size:14px;color:var(--mid);margin-bottom:4px;font-family:'Iansui',sans-serif;"><strong style="color:var(--dark);">Highest Degree</strong>&ensp;PhD in Adult Education, NKNU</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
@@ -444,7 +445,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       <div class="ph" style="aspect-ratio:3/4;background-color:#f0ebf5;"></div>
       <div>
         <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">◆ Faculty · Professional Courses</p>
-        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">Yen Szu-Ting</h3>
+        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">Yen Szu-Ting,<span style="font-size:.35em;font-weight:500;color:var(--mid);margin-left:8px;">Ph.D.</span></h3>
         <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">顏思婷 Yen Szu-Ting</p>
         <div style="margin-bottom:20px;"><p style="font-size:14px;color:var(--mid);margin-bottom:4px;font-family:'Iansui',sans-serif;"><strong style="color:var(--dark);">Highest Degree</strong>&ensp;PhD in Adult Education, NKNU</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
@@ -496,10 +497,49 @@ function showFaculty(id) {
 }
 </script>
 <div class="wave" style="background:var(--olive);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
-<section id="stories"><div class="mx"><p class="eyebrow">Before You Decide</p><h2 class="sh" style="margin-bottom:40px;">A field changes a person. A person changes a field.</h2>
+<section style="background:var(--parch,#EDE5D0);padding:72px 5%;" id="mentors">
+  <div class="mx">
+    <p class="eyebrow">Industry Mentors</p>
+    <h2 class="sh" style="margin-bottom:20px;">We're looking for mentors willing to solve problems alongside our students.</h2>
+    <p class="lead-text reveal" style="margin-bottom:8px;">The ageing industry is closer to everyday life than you might think.</p>
+    <p class="lead-text reveal" style="margin-bottom:44px;">As society lives longer, the way people live, the services they need and the shape of industry itself are all changing. Ageing-industry management begins by understanding these shifts — learning to connect people, culture, community and industry, and discovering new needs and possibilities in real life.</p>
+    <div class="mentor-grid reveal">
+      <div class="card card-r">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:900;color:var(--dark);margin-bottom:6px;">Ageing Life & Services</h3>
+        <p style="font-size:14px;color:var(--clay);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">Seeing new needs from how people actually live</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-family:'Iansui',sans-serif;">An ageing society is reshaping how we imagine health, daily life, housing and services — and surfacing needs worth rethinking.</p>
+        <p style="font-size:12px;letter-spacing:.08em;color:var(--mid);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">Industry Connections</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:12px;background:#fae8e6;color:var(--clay);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Health Promotion</span><span style="font-size:12px;background:#fae8e6;color:var(--clay);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Ageing Services</span><span style="font-size:12px;background:#fae8e6;color:var(--clay);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Life Services</span><span style="font-size:12px;background:#fae8e6;color:var(--clay);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Housing & Related Industries</span></div>
+      </div>
+      <div class="card card-t">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:900;color:var(--dark);margin-bottom:6px;">Technology & Innovation</h3>
+        <p style="font-size:14px;color:var(--teal);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">Letting new methods respond to real life</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-family:'Iansui',sans-serif;">The value of technology and innovation comes from understanding people. From spotting a need to shipping a service, students learn how innovation actually reaches older adults' lives.</p>
+        <p style="font-size:12px;letter-spacing:.08em;color:var(--mid);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">Industry Connections</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:12px;background:#e4eff5;color:var(--teal);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Ageing Tech</span><span style="font-size:12px;background:#e4eff5;color:var(--teal);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Digital Services</span><span style="font-size:12px;background:#e4eff5;color:var(--teal);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Smart Living & Innovation-Related Industries</span></div>
+      </div>
+      <div class="card card-g">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:900;color:var(--dark);margin-bottom:6px;">Culture & Place</h3>
+        <p style="font-size:14px;color:var(--olive);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">Imagining a different future, starting from your own place</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-family:'Iansui',sans-serif;">Culture, place and generational experience are key starting points for understanding an ageing society. Students begin from tribal communities, exploring culture, local life and sustainable possibilities.</p>
+        <p style="font-size:12px;letter-spacing:.08em;color:var(--mid);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">Industry Connections</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Culture</span><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Leisure</span><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Tourism</span><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Regional Regeneration</span><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Social Innovation & Related Organisations</span></div>
+      </div>
+      <div class="card card-p">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:900;color:var(--dark);margin-bottom:6px;">Enterprise & Society</h3>
+        <p style="font-size:14px;color:var(--purple);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">Creating more choices for a longer life</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-family:'Iansui',sans-serif;">Demographic change is reshaping consumption, work, finance, learning and social participation. Students learn to start from what people need, understanding how industry responds to an ageing society.</p>
+        <p style="font-size:12px;letter-spacing:.08em;color:var(--mid);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">Industry Connections</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:12px;background:#f0ebf5;color:var(--purple);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Finance</span><span style="font-size:12px;background:#f0ebf5;color:var(--purple);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Retail</span><span style="font-size:12px;background:#f0ebf5;color:var(--purple);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Education</span><span style="font-size:12px;background:#f0ebf5;color:var(--purple);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">Talent Development & Other Ageing-Life-Related Industries</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stories"><div class="mx"><p class="eyebrow">Student Voices</p><h2 class="sh" style="margin-bottom:40px;">A field changes a person. A person changes a field.</h2>
 <div class="two-col reveal" style="gap:32px;">
   <div class="ph" style="aspect-ratio:16/9;background-color:#f1dfae;"></div>
-  <div><p class="eyebrow">Ask Yourself</p><h3 style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--dark);margin-bottom:16px;line-height:1.4;">Could what you already know about your community be exactly what this industry needs?</h3><div class="btns"><a href="apply.html" class="btn-fill">I want to apply →</a></div></div>
+  <div><p class="eyebrow">One AIM-I Student Says</p><h3 style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--dark);margin-bottom:16px;line-height:1.4;">I'm still looking for the answer.<br>Maybe the culture and experience I carry from my community will take me somewhere unexpected.<br>I'll leave the answer to discover here, in my own time.</h3><div class="btns"><a href="en-apply.html#countdown-section" class="btn-fill">I want to become part of AIM-I →</a></div></div>
 </div></div></section>
 <div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--clay)"/></svg></div>
 <section class="dark-section" style="background:var(--clay);"><div class="mx reveal"><h2 class="sh sh-lt" style="max-width:540px;margin-bottom:24px;">Want to become one of our partners?</h2><p style="font-size:18px;color:rgba(255,255,255,.55);margin-bottom:32px;max-width:480px;line-height:1.85;">Bring your story and your understanding of your community. There is a learning environment here designed for you.</p><div class="btns"><a href="apply.html" class="btn-white">Admission Info</a><a href="collab.html" class="btn-ow" style="border:1.5px solid rgba(255,255,255,.28);color:#fff;padding:14px 22px;border-radius:3px;font-size:15px;font-weight:500;">Industry partners — join us</a></div></div></section>

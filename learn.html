@@ -75,7 +75,7 @@ nav{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rgba(
 /* CONTENT */
 section{padding:72px 5%;}
 .mx{max-width:1180px;margin:0 auto;}
-.eyebrow{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.eyebrow{font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:900;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .eyebrow::before{content:'◆';font-size:9px;}
 .eyebrow-lt{color:rgba(255,255,255,.4);}.eyebrow-lt::before{color:var(--amber);}
 .sh{font-family:var(--serif);font-size:clamp(22px,3.2vw,38px);font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:18px;}
@@ -85,6 +85,7 @@ section{padding:72px 5%;}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.career-groups{grid-template-columns:1fr 1fr;}
 /* PH */
 .ph{background:var(--fog);border:1px solid var(--border);border-radius:3px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:13px;color:var(--mid);letter-spacing:.06em;text-align:center;}
 /* QUOTE */
@@ -184,7 +185,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 .reveal.visible{opacity:1;transform:translateY(0);}
 /* RESPONSIVE */
 @media(max-width:900px){
-  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
+  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft,.career-groups{grid-template-columns:1fr;}
   .stats{grid-template-columns:1fr 1fr;}
   .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
   .fq-grid .fq:nth-child(even){padding-left:0;}
@@ -304,7 +305,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 <div class="mega" id="mega-learn">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">學習</p><h2 class="mega-headline">學管理，懂文化，<br><em>創造高齡產業的新可能。</em></h2><p class="mega-desc">三個核心能力，搭配四年真實場域的學習旅程。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年學習路徑</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">你可以去哪裡？</a></li><li><a href="learn.html#news">最新消息</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年學習路徑</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">你可以去哪裡？</a></li><li><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">最新消息</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-people">
@@ -316,7 +317,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 <div class="mega" id="mega-collab">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">產學合作</p><h2 class="mega-headline">你的真實問題，<br>是他們最好的教材。</h2><p class="mega-desc">不需要完整的合作計畫，一個想法就可以是開始。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="collab.html">銀色產業前線見學</a></li><li><a href="collab.html#sprint">高齡產業解題松</a></li><li><a href="collab.html#mentor">高齡產業圖鑑</a></li><li><a href="collab.html#collab-intent" class="hl">共場．合作意向</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="collab.html#fieldvisit">銀色產業前線見學</a></li><li><a href="collab.html#sprint">高齡產業解題松</a></li><li><a href="collab.html#mentor">高齡產業圖鑑</a></li><li><a href="collab.html#collab-intent" class="hl">共場．合作意向</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-apply">
@@ -377,7 +378,25 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 </div></div></section>
 <div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--earth)"/></svg></div>
 <section style="background:var(--earth);padding:60px 5%;" id="careers"><div class="mx"><p class="eyebrow eyebrow-lt">你可以去哪裡？</p><h2 class="sh sh-lt" style="margin-bottom:32px;">四年後，你可以成為</h2>
-<div style="display:flex;flex-wrap:wrap;gap:12px;"><span style="font-size:15px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.14);padding:10px 20px;border-radius:2px;">銀髮友善事業經營者</span><span style="font-size:15px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.14);padding:10px 20px;border-radius:2px;">AgeTech 創業者</span><span style="font-size:15px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.14);padding:10px 20px;border-radius:2px;">部落組織幹部</span><span style="font-size:15px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.14);padding:10px 20px;border-radius:2px;">高齡文化創業者</span><span style="font-size:15px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.14);padding:10px 20px;border-radius:2px;">公部門原住民族業務主管</span><span style="font-size:15px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.14);padding:10px 20px;border-radius:2px;">社會企業經營者</span><span style="font-size:15px;color:var(--amber);border:1px dashed rgba(212,144,28,.55);padding:10px 20px;border-radius:2px;">還沒有名字的職業</span></div>
+<div class="career-groups reveal" style="display:grid;gap:28px 40px;margin-bottom:28px;">
+      <div>
+        <p style="font-size:13px;color:var(--clay);font-weight:700;letter-spacing:.05em;margin-bottom:12px;font-family:'Iansui',sans-serif;">高齡生活與服務</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;"><span style="font-size:15px;color:rgba(255,255,255,.72);border:1px solid var(--clay);padding:10px 20px;border-radius:2px;">銀髮友善事業經營者</span><span style="font-size:15px;color:rgba(255,255,255,.72);border:1px solid var(--clay);padding:10px 20px;border-radius:2px;">高齡生活服務規劃師</span></div>
+      </div>
+      <div>
+        <p style="font-size:13px;color:var(--teal);font-weight:700;letter-spacing:.05em;margin-bottom:12px;font-family:'Iansui',sans-serif;">科技與創新</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;"><span style="font-size:15px;color:rgba(255,255,255,.72);border:1px solid var(--teal);padding:10px 20px;border-radius:2px;">AgeTech 創業者</span><span style="font-size:15px;color:rgba(255,255,255,.72);border:1px solid var(--teal);padding:10px 20px;border-radius:2px;">高齡科技產品經理</span></div>
+      </div>
+      <div>
+        <p style="font-size:13px;color:var(--olive);font-weight:700;letter-spacing:.05em;margin-bottom:12px;font-family:'Iansui',sans-serif;">文化與地方</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;"><span style="font-size:15px;color:rgba(255,255,255,.72);border:1px solid var(--olive);padding:10px 20px;border-radius:2px;">部落組織幹部</span><span style="font-size:15px;color:rgba(255,255,255,.72);border:1px solid var(--olive);padding:10px 20px;border-radius:2px;">高齡文化創業者</span></div>
+      </div>
+      <div>
+        <p style="font-size:13px;color:var(--purple);font-weight:700;letter-spacing:.05em;margin-bottom:12px;font-family:'Iansui',sans-serif;">經營與社會</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;"><span style="font-size:15px;color:rgba(255,255,255,.72);border:1px solid var(--purple);padding:10px 20px;border-radius:2px;">公部門原住民族業務主管</span><span style="font-size:15px;color:rgba(255,255,255,.72);border:1px solid var(--purple);padding:10px 20px;border-radius:2px;">社會企業經營者</span></div>
+      </div>
+    </div>
+    <span style="font-size:15px;color:var(--amber);border:1px dashed rgba(212,144,28,.55);padding:10px 20px;border-radius:2px;display:inline-block;">有些職業由你來創造</span>
 <div class="btns"><a href="apply.html" class="btn-white" style="margin-top:32px;">立即報名 →</a></div></div></section>
 <div class="wave" style="background:var(--earth);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
 <div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;display:block;width:100%;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="#2A1E14"/></svg></div>

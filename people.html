@@ -75,7 +75,7 @@ nav{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rgba(
 /* CONTENT */
 section{padding:72px 5%;}
 .mx{max-width:1180px;margin:0 auto;}
-.eyebrow{font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.eyebrow{font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:900;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .eyebrow::before{content:'◆';font-size:9px;}
 .eyebrow-lt{color:rgba(255,255,255,.4);}.eyebrow-lt::before{color:var(--amber);}
 .sh{font-family:var(--serif);font-size:clamp(22px,3.2vw,38px);font-weight:700;color:var(--dark);line-height:1.25;margin-bottom:18px;}
@@ -85,6 +85,7 @@ section{padding:72px 5%;}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.mentor-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
 /* PH */
 .ph{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:3px;background-color:var(--fog);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill-opacity='.14'%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(50,20) rotate(45)' fill='%23C42016'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(20,50) rotate(45)' fill='%236B7A38'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(80,50) rotate(45)' fill='%236A4A7A'/%3E%3Crect x='-18' y='-18' width='36' height='36' rx='4' transform='translate(50,80) rotate(45)' fill='%232A5870'/%3E%3Crect x='-8' y='-8' width='16' height='16' rx='2' transform='translate(50,50) rotate(45)' fill='%23D4901C' fill-opacity='.22'/%3E%3C/g%3E%3C/svg%3E"),repeating-linear-gradient(45deg,rgba(255,255,255,.4) 0px,rgba(255,255,255,.4) 1px,transparent 1px,transparent 15px),repeating-linear-gradient(-45deg,rgba(255,255,255,.4) 0px,rgba(255,255,255,.4) 1px,transparent 1px,transparent 15px);background-size:52% auto,auto,auto;background-position:center center,0 0,0 0;background-repeat:no-repeat,repeat,repeat;}
 /* QUOTE */
@@ -174,7 +175,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 .reveal.visible{opacity:1;transform:translateY(0);}
 /* RESPONSIVE */
 @media(max-width:900px){
-  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
+  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft,.mentor-grid{grid-template-columns:1fr;}
   .faculty-card{grid-template-columns:1fr!important;gap:24px!important;padding:24px!important;}
   .stats{grid-template-columns:1fr 1fr;}
   .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
@@ -295,7 +296,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 <div class="mega" id="mega-learn">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">學習</p><h2 class="mega-headline">知識是地圖，<br>能力是步伐，<br><em>文化是方向。</em></h2><p class="mega-desc">三個核心能力，搭配四年真實場域的學習旅程。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li><li><a href="learn.html#news">最新消息</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li><li><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">最新消息</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-people">
@@ -307,7 +308,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 <div class="mega" id="mega-collab">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">產學合作</p><h2 class="mega-headline">你的真實問題，<br>是他們最好的教材。</h2><p class="mega-desc">不需要完整的合作計畫，一個想法就可以是開始。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="collab.html">銀色產業前線見學</a></li><li><a href="collab.html#sprint">高齡產業解題松</a></li><li><a href="collab.html#mentor">高齡產業圖鑑</a></li><li><a href="collab.html#collab-intent" class="hl">共場．合作意向</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="collab.html#fieldvisit">銀色產業前線見學</a></li><li><a href="collab.html#sprint">高齡產業解題松</a></li><li><a href="collab.html#mentor">高齡產業圖鑑</a></li><li><a href="collab.html#collab-intent" class="hl">共場．合作意向</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-apply">
@@ -329,19 +330,19 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;" id="faculty-tabs">
       <button onclick="showFaculty('tarn')" id="tab-tarn"
         style="font-family:'Iansui',sans-serif;font-size:17px;padding:12px 28px;border-radius:3px;border:2px solid var(--clay);background:var(--clay);color:#fff;cursor:pointer;font-weight:700;transition:all .2s;" id="tab-tarn">
-        譚大純
+        譚大純<span style="font-size:12px;font-weight:400;margin-left:2px;">博士</span>
       </button>
       <button onclick="showFaculty('huang')" id="tab-huang"
         style="font-family:'Iansui',sans-serif;font-size:17px;padding:12px 28px;border-radius:3px;border:2px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;font-weight:500;transition:all .2s;">
-        黃曼莉
+        黃曼莉<span style="font-size:12px;font-weight:400;margin-left:2px;">博士</span>
       </button>
       <button onclick="showFaculty('yang')" id="tab-yang"
         style="font-family:'Iansui',sans-serif;font-size:17px;padding:12px 28px;border-radius:3px;border:2px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;font-weight:500;transition:all .2s;">
-        楊秀燕
+        楊秀燕<span style="font-size:12px;font-weight:400;margin-left:2px;">博士</span>
       </button>
       <button onclick="showFaculty('yen')" id="tab-yen"
         style="font-family:'Iansui',sans-serif;font-size:17px;padding:12px 28px;border-radius:3px;border:2px solid rgba(255,255,255,.25);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;font-weight:500;transition:all .2s;">
-        顏思婷
+        顏思婷<span style="font-size:12px;font-weight:400;margin-left:2px;">博士</span>
       </button>
     </div>
 
@@ -350,7 +351,7 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       <div class="ph" style="aspect-ratio:3/4;background-color:#fae8e6;"></div>
       <div>
         <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">◆ 教授兼管理學院院長・專班主任</p>
-        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">譚大純</h3>
+        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">譚大純<span style="font-size:.35em;font-weight:500;color:var(--mid);margin-left:10px;">博士</span></h3>
         <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">David DC Tarn</p>
         <div style="margin-bottom:20px;"><p style="font-size:14px;color:var(--mid);margin-bottom:4px;font-family:'Iansui',sans-serif;"><strong style="color:var(--dark);">最高學歷</strong>　國立成功大學 企業管理博士</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
@@ -360,16 +361,12 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
           <span style="font-size:14px;background:#fae8e6;color:var(--clay);padding:5px 14px;border-radius:2px;font-family:'Iansui',sans-serif;">知識管理</span>
         </div>
 
-        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:24px;">
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你對<strong style="color:var(--dark);">如何設計一個真正有用的高齡服務</strong>有想法嗎？<br>我的研究就是在問同一個問題，來一起找答案。</p>
-          </div>
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你帶著<strong style="color:var(--dark);">部落的記憶和文化的視角</strong>來嗎？<br>在我的課堂裡，那是最珍貴的研究材料。</p>
-          </div>
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你有一個<strong style="color:var(--dark);">還沒說出口的創業想法</strong>嗎？<br>從想法到可以向業者發表的提案，這段路讓我陪你走。</p>
-          </div>
+        <div style="margin-bottom:24px;">
+          <p style="font-size:18px;color:var(--dark);font-weight:700;line-height:1.8;margin-bottom:18px;font-family:'Iansui',sans-serif;">有些好的想法，需要的不只是被看見，而是有力量一直走下去。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">一個地方的文化、一個部落正在做的事，或一個你真正在乎的問題，都可能是改變的開始。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">策略與管理教我們的，不只是如何競爭，而是如何在有限的條件中找到方向、連結夥伴、整合資源，讓真正重要的價值能夠持續。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">你不需要帶著成熟的計畫來。一個對家鄉的關心、一件很想改變的事，甚至一個還說不清楚的念頭，都值得被認真對待。</p>
+          <p style="font-size:17px;color:var(--clay);font-weight:700;line-height:1.8;margin-top:4px;font-family:'Iansui',sans-serif;">讓一個好的想法，有機會成為走得長久的行動。</p>
         </div>
         <p style="font-size:16px;color:var(--mid);margin-bottom:6px;font-family:'Iansui',sans-serif;">✉ <a href="mailto:dctarn@mail.nknu.edu.tw" style="color:var(--clay);">dctarn@mail.nknu.edu.tw</a></p>
         <p style="font-size:16px;color:var(--mid);font-family:'Iansui',sans-serif;">📞 (07) 717-2930 # 2253</p>
@@ -380,8 +377,8 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       <div class="ph" style="aspect-ratio:3/4;background-color:#edf3e0;"></div>
       <div>
         <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">◆ 專案助理教授・專班導師</p>
-        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">黃曼莉</h3>
-        <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">Huang Man-Li</p>
+        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">黃曼莉<span style="font-size:.35em;font-weight:500;color:var(--mid);margin-left:10px;">博士</span></h3>
+        <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">Man-Li｜專案助理教授・Pangcah / Amis</p>
         <div style="margin-bottom:20px;"><p style="font-size:14px;color:var(--mid);margin-bottom:4px;font-family:'Iansui',sans-serif;"><strong style="color:var(--dark);">最高學歷</strong>　英國蘭卡斯特大學（Lancaster University）設計博士</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
           <span style="font-size:14px;background:#edf3e0;color:var(--olive);padding:5px 14px;border-radius:2px;font-family:'Iansui',sans-serif;">去殖民設計</span>
@@ -390,16 +387,15 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
           <span style="font-size:14px;background:#edf3e0;color:var(--olive);padding:5px 14px;border-radius:2px;font-family:'Iansui',sans-serif;">文化與社會創新</span>
         </div>
 
-        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:24px;">
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你對<strong style="color:var(--dark);">如何設計一個真正有用的高齡服務</strong>有想法嗎？<br>我的研究就是在問同一個問題，來一起找答案。</p>
-          </div>
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你帶著<strong style="color:var(--dark);">部落的記憶和文化的視角</strong>來嗎？<br>在我的課堂裡，那是最珍貴的研究材料。</p>
-          </div>
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你有一個<strong style="color:var(--dark);">還沒說出口的創業想法</strong>嗎？<br>從想法到可以向業者發表的提案，這段路讓我陪你走。</p>
-          </div>
+        <div style="margin-bottom:24px;">
+          <p style="font-size:18px;color:var(--dark);font-weight:700;line-height:1.8;margin-bottom:18px;font-family:'Iansui',sans-serif;">有一天，你也可以從自己的文化出發，參與定義未來。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">來到大學，你可以帶著自己的文化，一起走進來。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">如果你來自部落，你所知道的事情，可能和課本寫的不一樣；你從長輩那裡聽來的故事、家裡說話的方式、祭儀中的規矩、土地教你的事情，也未必會出現在教科書裡。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">這些都很重要。那些也是知識。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">我也是原住民族。我希望你來到這裡之後，在學習別人如何理解世界的同時，也慢慢看見：自己的文化、生命經驗與看事情的方法，同樣可以成為理解世界的起點。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">你可以成為自己想成為的樣子，也可以帶著自己的文化，走向更遠的地方。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">我們會一起學習如何聆聽族人、理解文化、提出問題，也學習如何透過設計與研究，把自己的觀點說清楚。</p>
+          <p style="font-size:17px;color:var(--olive);font-weight:700;line-height:1.8;margin-top:4px;font-family:'Iansui',sans-serif;">有一天，當別人問你：「原住民族的未來，應該是什麼樣子？」<br>我希望你有足夠的知識，也有足夠的自信回答：我們的未來，我們也能一起參與定義。</p>
         </div>
         <p style="font-size:16px;color:var(--mid);margin-bottom:6px;font-family:'Iansui',sans-serif;">✉ <a href="mailto:t4963@mail.nknu.edu.tw" style="color:var(--olive);">t4963@mail.nknu.edu.tw</a></p>
       </div>
@@ -409,23 +405,19 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       <div class="ph" style="aspect-ratio:3/4;background-color:#e4eff5;"></div>
       <div>
         <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">◆ 專業課程教師</p>
-        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">楊秀燕</h3>
+        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">楊秀燕<span style="font-size:.35em;font-weight:500;color:var(--mid);margin-left:10px;">博士</span></h3>
         <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">Yang Hsiu-Yen</p>
         <div style="margin-bottom:20px;"><p style="font-size:14px;color:var(--mid);margin-bottom:4px;font-family:'Iansui',sans-serif;"><strong style="color:var(--dark);">最高學歷</strong>　國立高雄師範大學 成人教育所博士</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
           <span style="font-size:14px;background:#e4eff5;color:var(--teal);padding:5px 14px;border-radius:2px;font-family:'Iansui',sans-serif;">高齡產業概論</span>
         </div>
 
-        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:24px;">
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你對<strong style="color:var(--dark);">如何設計一個真正有用的高齡服務</strong>有想法嗎？<br>我的研究就是在問同一個問題，來一起找答案。</p>
-          </div>
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你帶著<strong style="color:var(--dark);">部落的記憶和文化的視角</strong>來嗎？<br>在我的課堂裡，那是最珍貴的研究材料。</p>
-          </div>
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你有一個<strong style="color:var(--dark);">還沒說出口的創業想法</strong>嗎？<br>從想法到可以向業者發表的提案，這段路讓我陪你走。</p>
-          </div>
+        <div style="margin-bottom:24px;">
+          <p style="font-size:18px;color:var(--dark);font-weight:700;line-height:1.8;margin-bottom:18px;font-family:'Iansui',sans-serif;">我們都會老。重要的是，我們希望怎麼老去。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">高齡不只關乎身體與照顧，也關乎一個人到了生命的不同階段，是否還能做自己的選擇、維持熟悉的關係、參與喜歡的事情，在自己珍惜的地方生活。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">所以在認識高齡產業之前，我們會先試著理解高齡者的生活。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">你陪伴家人的經驗、與部落長輩相處的記憶，甚至生活中一個很小的觀察，都可能讓我們重新理解：什麼才是真正需要的服務與支持。</p>
+          <p style="font-size:17px;color:var(--teal);font-weight:700;line-height:1.8;margin-top:4px;font-family:'Iansui',sans-serif;">我們學習的，不只是如何回應老去，而是如何讓每一個人，都有機會好好地老去。</p>
         </div>
         <p style="font-size:16px;color:var(--mid);margin-bottom:6px;font-family:'Iansui',sans-serif;">✉ <a href="mailto:s2897@mail.nknu.edu.tw" style="color:var(--teal);">s2897@mail.nknu.edu.tw</a></p>
       </div>
@@ -435,22 +427,20 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
       <div class="ph" style="aspect-ratio:3/4;background-color:#f0ebf5;"></div>
       <div>
         <p style="font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">◆ 專業課程教師</p>
-        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">顏思婷</h3>
+        <h3 style="font-family:'Iansui','Noto Serif TC',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:900;color:var(--dark);margin-bottom:6px;">顏思婷<span style="font-size:.35em;font-weight:500;color:var(--mid);margin-left:10px;">博士</span></h3>
         <p style="font-size:17px;color:var(--mid);margin-bottom:24px;font-family:'Iansui',sans-serif;">Yen Szu-Ting</p>
         <div style="margin-bottom:20px;"><p style="font-size:14px;color:var(--mid);margin-bottom:4px;font-family:'Iansui',sans-serif;"><strong style="color:var(--dark);">最高學歷</strong>　國立高雄師範大學 成人教育所博士</p></div>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">
           <span style="font-size:14px;background:#f0ebf5;color:var(--purple);padding:5px 14px;border-radius:2px;font-family:'Iansui',sans-serif;">經濟學</span>
         </div>
-        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:24px;">
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你對<strong style="color:var(--dark);">如何設計一個真正有用的高齡服務</strong>有想法嗎？<br>我的研究就是在問同一個問題，來一起找答案。</p>
-          </div>
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你帶著<strong style="color:var(--dark);">部落的記憶和文化的視角</strong>來嗎？<br>在我的課堂裡，那是最珍貴的研究材料。</p>
-          </div>
-          <div style="border-left:2px solid rgba(0,0,0,.12);padding-left:16px;">
-            <p style="font-size:16px;color:var(--mid);line-height:1.9;font-family:'Iansui',sans-serif;">你有一個<strong style="color:var(--dark);">還沒說出口的創業想法</strong>嗎？<br>從想法到可以向業者發表的提案，這段路讓我陪你走。</p>
-          </div>
+        <div style="margin-bottom:24px;">
+          <p style="font-size:18px;color:var(--dark);font-weight:700;line-height:1.8;margin-bottom:18px;font-family:'Iansui',sans-serif;">每一個數字背後，都有人。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">一筆預算、一項資源、一個百分比，看起來只是數字；但當資源被放在不同的地方，就可能改變一個家庭、一個部落，甚至一個人的選擇。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">這也是我們學習經濟學的理由。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">我們會從生活出發，理解資源為什麼有限、選擇如何發生，也一起思考：當不同的人擁有不同的條件時，怎麼樣的分配，才能讓更多人擁有選擇與發展的機會？</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">你不必害怕數字。</p>
+          <p style="font-size:16px;color:var(--mid);line-height:1.9;margin-bottom:14px;font-family:'Iansui',sans-serif;">因為學習經濟，不只是為了算得更快，而是為了更清楚地理解我們生活的世界。</p>
+          <p style="font-size:17px;color:var(--purple);font-weight:700;line-height:1.8;margin-top:4px;font-family:'Iansui',sans-serif;">學會看懂數字，也始終記得看見數字背後的人。</p>
         </div>
       </div>
     </div>
@@ -484,10 +474,48 @@ function showFaculty(id) {
 }
 </script>
 <div class="wave" style="background:var(--olive);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
-<section id="stories"><div class="mx"><p class="eyebrow">在你決定之前</p><h2 class="sh" style="margin-bottom:40px;">一個懂文化的經營者，可以改變一個產業的樣貌。</h2>
+<section style="background:var(--parch,#EDE5D0);padding:72px 5%;" id="mentors">
+  <div class="mx">
+    <p class="eyebrow">業師團隊</p>
+    <h2 class="sh" style="margin-bottom:20px;">我們正在尋找，願意陪學生一起解題的業師。</h2>
+    <p class="lead-text reveal" style="margin-bottom:8px;">高齡產業，比你想像的更靠近生活。</p>
+    <p class="lead-text reveal" style="margin-bottom:44px;">當社會愈來愈長壽，人們的生活方式、服務需求與產業樣貌也正在改變。高齡產業經營，從理解這些改變開始，學習連結人、文化、社區與產業，在真實生活中發現新的需求與可能。</p>
+    <div class="mentor-grid reveal">
+      <div class="card card-r">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:900;color:var(--dark);margin-bottom:6px;">高齡生活與服務</h3>
+        <p style="font-size:14px;color:var(--clay);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">從人的生活，看見新的需要</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-family:'Iansui',sans-serif;">高齡社會正在改變我們對健康、生活、居住與服務的想像，也帶來更多值得重新思考的需求。</p>
+        <p style="font-size:12px;letter-spacing:.08em;color:var(--mid);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">產業連結</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:12px;background:#fae8e6;color:var(--clay);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">健康促進</span><span style="font-size:12px;background:#fae8e6;color:var(--clay);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">高齡服務</span><span style="font-size:12px;background:#fae8e6;color:var(--clay);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">生活服務</span><span style="font-size:12px;background:#fae8e6;color:var(--clay);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">居住及相關產業</span></div>
+      </div>
+      <div class="card card-t">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:900;color:var(--dark);margin-bottom:6px;">科技與創新</h3>
+        <p style="font-size:14px;color:var(--teal);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">讓新的方法回應真實生活</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-family:'Iansui',sans-serif;">科技與創新的價值，來自對人的理解。從需求發現到服務應用，學生學習思考創新如何真正走進高齡者的生活。</p>
+        <p style="font-size:12px;letter-spacing:.08em;color:var(--mid);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">產業連結</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:12px;background:#e4eff5;color:var(--teal);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">高齡科技</span><span style="font-size:12px;background:#e4eff5;color:var(--teal);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">數位服務</span><span style="font-size:12px;background:#e4eff5;color:var(--teal);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">智慧生活及創新應用相關產業</span></div>
+      </div>
+      <div class="card card-g">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:900;color:var(--dark);margin-bottom:6px;">文化與地方</h3>
+        <p style="font-size:14px;color:var(--olive);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">從自己的地方，想像不同的未來</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-family:'Iansui',sans-serif;">文化、地方與世代經驗，是理解高齡社會的重要起點。學生從部落與社區出發，探索文化、地方生活與永續發展的可能。</p>
+        <p style="font-size:12px;letter-spacing:.08em;color:var(--mid);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">產業連結</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">文化</span><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">休閒</span><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">旅遊</span><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">地方創生</span><span style="font-size:12px;background:#edf3e0;color:var(--olive);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">社會創新及相關組織</span></div>
+      </div>
+      <div class="card card-p">
+        <h3 style="font-family:var(--serif);font-size:21px;font-weight:900;color:var(--dark);margin-bottom:6px;">經營與社會</h3>
+        <p style="font-size:14px;color:var(--purple);font-weight:700;margin-bottom:14px;font-family:'Iansui',sans-serif;">為更長的人生，創造更多選擇</p>
+        <p style="font-size:15px;color:var(--mid);line-height:1.85;margin-bottom:18px;font-family:'Iansui',sans-serif;">人口結構的改變，也正在影響消費、工作、金融、學習與社會參與。學生學習從人的需要出發，理解產業如何回應一個正在變老的社會。</p>
+        <p style="font-size:12px;letter-spacing:.08em;color:var(--mid);font-weight:700;margin-bottom:8px;font-family:'Iansui',sans-serif;">產業連結</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span style="font-size:12px;background:#f0ebf5;color:var(--purple);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">金融</span><span style="font-size:12px;background:#f0ebf5;color:var(--purple);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">零售</span><span style="font-size:12px;background:#f0ebf5;color:var(--purple);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">教育</span><span style="font-size:12px;background:#f0ebf5;color:var(--purple);padding:4px 12px;border-radius:20px;font-family:'Iansui',sans-serif;">人才發展及其他高齡生活相關產業</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="stories"><div class="mx"><p class="eyebrow">學生聊</p><h2 class="sh" style="margin-bottom:40px;">一個懂文化的經營者，可以改變一個產業的樣貌。</h2>
 <div class="two-col reveal" style="gap:32px;">
   <div class="ph" style="aspect-ratio:16/9;background-color:#f1dfae;"></div>
-  <div><p class="eyebrow">問問自己</p><h3 style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--dark);margin-bottom:16px;line-height:1.4;">你對部落的了解，會不會正是這個產業最需要的？</h3><div class="btns"><a href="apply.html" class="btn-fill">我想申請 →</a></div></div>
+  <div><p class="eyebrow">一位 AIM-I 學生說</p><h3 style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--dark);margin-bottom:16px;line-height:1.4;">我還在找答案。<br>也許，我從部落帶來的文化與經驗，會帶我走向意想不到的地方。<br>答案，就留給我在這裡慢慢發現。</h3><div class="btns"><a href="apply.html#countdown-section" class="btn-fill">我想成為 AIM-I 一份子 →</a></div></div>
 </div></div></section>
 <div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--clay)"/></svg></div>
 <section class="dark-section" style="background:var(--clay);"><div class="mx reveal"><h2 class="sh sh-lt" style="max-width:540px;margin-bottom:24px;">想成為夥伴們嗎？</h2><p style="font-size:18px;color:rgba(255,255,255,.55);margin-bottom:32px;max-width:480px;line-height:1.85;">帶著你的故事和你對部落的了解來。這裡有一個為你設計的學習環境。</p><div class="btns"><a href="apply.html" class="btn-white">查看招生資訊</a><a href="collab.html" class="btn-ow" style="border:1.5px solid rgba(255,255,255,.28);color:#fff;padding:14px 22px;border-radius:3px;font-size:15px;font-weight:500;">業界夥伴也來加入</a></div></div></section>

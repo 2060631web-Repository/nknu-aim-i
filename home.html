@@ -346,6 +346,7 @@ const NAV = {
     ['夥伴們','people.html','mega-people-zh'],
     ['合作','collab.html','mega-collab-zh'],
     ['申請','apply.html','mega-apply-zh'],
+    ['AIM-I 動態','https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews',null,false,true],
     ['立即報名','apply.html',null,true]
   ],
   en: [
@@ -354,6 +355,7 @@ const NAV = {
     ['Our Partners','en-people.html','mega-people-en'],
     ['Collaborate','en-collab.html','mega-collab-en'],
     ['Apply','en-apply.html','mega-apply-en'],
+    ['AIM-I Updates','https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews',null,false,true],
     ['Apply Now','en-apply.html',null,true]
   ]
 };
@@ -361,13 +363,14 @@ const NAV = {
 function buildNav(lang) {
   const ul = document.getElementById('navlinks');
   ul.innerHTML = '';
-  NAV[lang].forEach(([label,href,mega,isBtn]) => {
+  NAV[lang].forEach(([label,href,mega,isBtn,ext]) => {
     const li = document.createElement('li');
-    if(mega) li.className = 'nav-item has-mega';
+    li.className = mega ? 'nav-item has-mega' : 'nav-item';
     const a = document.createElement('a');
     a.href = href;
     a.textContent = label;
     if(isBtn) a.className = 'nav-apply';
+    if(ext) { a.target = '_blank'; a.rel = 'noopener'; }
     if(mega) { a.dataset.mega = mega; a.addEventListener('click', function(e){ const id=this.dataset.mega; if(activeMega&&activeMega.id===id){closeMega();return;} e.preventDefault();openMega(id); }); }
     li.appendChild(a);
     ul.appendChild(li);

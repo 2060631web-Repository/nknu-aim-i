@@ -173,8 +173,9 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 /* RESPONSIVE */
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;}
 @media(max-width:900px){
-  .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
+  .hero-grid,.two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
   .stats{grid-template-columns:1fr 1fr;}
   .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
   .fq-grid .fq:nth-child(even){padding-left:0;}
@@ -324,16 +325,13 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
   </div>
 </div>
 <section style="background:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(160,120,60,.055) 0px,rgba(160,120,60,.055) 1px,transparent 1px,transparent 22px),repeating-linear-gradient(-45deg,rgba(160,120,60,.055) 0px,rgba(160,120,60,.055) 1px,transparent 1px,transparent 22px);min-height:90vh;display:flex;flex-direction:column;position:relative;overflow:hidden;" id="hero">
-  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:60px 5% 40px;">
-    <div style="max-width:680px;">
+  <div class="hero-grid" style="flex:1;align-items:center;padding:60px 5% 40px;">
+    <div style="max-width:620px;">
       <p class="eyebrow">AIM-I · 高齡產業經營學士原住民專班</p>
       <p style="display:inline-flex;align-items:center;gap:8px;background:var(--clay);color:#fff;font-size:14px;font-weight:700;letter-spacing:.04em;padding:9px 20px;border-radius:999px;margin-bottom:20px;font-family:'Iansui',sans-serif;">🎓 全臺第一個原住民專班・商學學士</p>
-      <h1 style="font-family:var(--serif);font-size:clamp(38px,6vw,72px);font-weight:900;color:var(--dark);line-height:1.05;letter-spacing:-.01em;margin-bottom:22px;">
-        高齡，<br>
-        是台灣此刻<br>
-        最真實的產業課題。<br>
-        <span style="color:var(--clay);">不缺照顧的人，</span><br>
-        <span style="color:var(--clay);">缺的是懂得經營它的人。</span>
+      <h1 style="font-family:var(--serif);font-size:clamp(34px,5vw,60px);font-weight:700;color:var(--dark);line-height:1.2;letter-spacing:-.01em;margin-bottom:22px;">
+        高齡，是台灣此刻最真實的產業課題。<br>
+        <span style="color:var(--clay);">不缺照顧的人，缺的是懂得經營它的人。</span>
       </h1>
       <p style="font-size:19px;color:var(--mid);max-width:540px;line-height:1.85;margin-bottom:32px;font-family:'Iansui',sans-serif;">
         AIM-I 培育的是能在高齡產業裡<strong style="color:var(--dark);">創業、設計、管理與經營</strong>的人。<br>
@@ -342,6 +340,25 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
         <a href="apply.html" class="btn-fill">了解招生資訊</a>
         <a href="about.html" class="btn-ghost">認識這個學程</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:20px;">
+      <div id="home-cd-timer" style="background:var(--clay);border-radius:10px;padding:26px 32px;text-align:center;width:100%;max-width:440px;box-sizing:border-box;box-shadow:0 20px 50px rgba(196,32,22,.22);">
+        <p id="home-cd-label" style="color:#fff;font-size:14px;font-weight:900;letter-spacing:.04em;margin-bottom:2px;">距離報名開始</p>
+        <p style="color:rgba(255,255,255,.7);font-size:11px;margin-bottom:16px;">116學年度招生簡章已公布</p>
+        <div id="home-cd-nums" style="display:flex;gap:8px;justify-content:center;margin-bottom:16px;">
+          <div style="background:rgba(255,255,255,.15);border-radius:5px;padding:8px 12px;text-align:center;min-width:48px;"><div id="home-cd-days" style="font-family:var(--serif);font-size:22px;font-weight:900;color:#fff;line-height:1;">--</div><div style="font-size:10px;color:rgba(255,255,255,.6);margin-top:2px;">天</div></div>
+          <div style="background:rgba(255,255,255,.15);border-radius:5px;padding:8px 12px;text-align:center;min-width:48px;"><div id="home-cd-hours" style="font-family:var(--serif);font-size:22px;font-weight:900;color:#fff;line-height:1;">--</div><div style="font-size:10px;color:rgba(255,255,255,.6);margin-top:2px;">時</div></div>
+          <div style="background:rgba(255,255,255,.15);border-radius:5px;padding:8px 12px;text-align:center;min-width:48px;"><div id="home-cd-mins" style="font-family:var(--serif);font-size:22px;font-weight:900;color:#fff;line-height:1;">--</div><div style="font-size:10px;color:rgba(255,255,255,.6);margin-top:2px;">分</div></div>
+          <div style="background:rgba(255,255,255,.15);border-radius:5px;padding:8px 12px;text-align:center;min-width:48px;"><div id="home-cd-secs" style="font-family:var(--serif);font-size:22px;font-weight:900;color:#fff;line-height:1;">--</div><div style="font-size:10px;color:rgba(255,255,255,.6);margin-top:2px;">秒</div></div>
+        </div>
+        <a href="apply.html#countdown-section" id="home-cd-link" class="btn-white" style="display:inline-block;font-size:14px;padding:9px 22px;">了解招生資訊 →</a>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:48px 48px;text-align:center;width:100%;max-width:440px;box-sizing:border-box;box-shadow:0 24px 64px rgba(42,30,20,.1);">
+        <div style="font-family:var(--serif);font-size:clamp(28px,3.4vw,42px);font-weight:800;color:var(--clay);line-height:1.1;white-space:nowrap;">商學學士</div>
+        <div style="width:40px;height:3px;background:var(--clay);margin:20px auto;"></div>
+        <p style="font-size:16px;color:var(--dark);font-weight:700;line-height:1.6;margin-bottom:12px;">全臺第一個原住民專班<br>授予的正式商學學位</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.8;">AIM-I 畢業生取得的是正式「商學學士」學位，在原住民族文化知識的基礎上，培養對等於頂尖商管學程的專業能力。</p>
       </div>
     </div>
   </div>
@@ -470,5 +487,30 @@ document.querySelectorAll('.mega-links a').forEach(a=>{a.addEventListener('click
   }
 })();
 </script>
-<script>(function(){var el=document.getElementById('nav-apply-link');if(!el)return;var s=new Date('2026-12-10T09:00:00+08:00').getTime();var REG='https://sso.nknu.edu.tw/Recruit/aboriginal.aspx';function u(){el.href=(new Date().getTime()>=s)?REG:'apply.html#countdown-section';}u();setInterval(u,30000);})();</script>
+<script>(function(){
+  var navEl=document.getElementById('nav-apply-link');
+  var s=new Date('2026-12-10T09:00:00+08:00').getTime();
+  var REG='https://sso.nknu.edu.tw/Recruit/aboriginal.aspx';
+  var elDays=document.getElementById('home-cd-days'),elHours=document.getElementById('home-cd-hours'),elMins=document.getElementById('home-cd-mins'),elSecs=document.getElementById('home-cd-secs');
+  var elLabel=document.getElementById('home-cd-label'),elLink=document.getElementById('home-cd-link'),elNums=document.getElementById('home-cd-nums');
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var now=new Date().getTime();
+    var target=(now>=s)?REG:'apply.html#countdown-section';
+    if(navEl) navEl.href=target;
+    if(elLink) elLink.href=target;
+    if(!elDays) return;
+    var diff=s-now;
+    if(diff<=0){
+      if(elLabel) elLabel.textContent='報名已開始，立即報名！';
+      if(elNums) elNums.style.display='none';
+      return;
+    }
+    if(elLabel) elLabel.textContent='距離報名開始';
+    var dd=Math.floor(diff/86400000),hh=Math.floor((diff%86400000)/3600000),mm=Math.floor((diff%3600000)/60000),ss=Math.floor((diff%60000)/1000);
+    elDays.textContent=dd;elHours.textContent=pad(hh);elMins.textContent=pad(mm);elSecs.textContent=pad(ss);
+  }
+  tick();
+  setInterval(tick,1000);
+})();</script>
 </body></html>

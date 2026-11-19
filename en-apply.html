@@ -10,7 +10,7 @@
   --clay:#C42016;--clay-lt:#D94030;--earth:#2A1E14;--olive:#6B7A38;
   --purple:#6A4A7A;--teal:#2A5870;--amber:#D4901C;
   --cream:#F5F0E2;--parch:#EDE5D0;--fog:#E0D8C4;--border:#C8BFA8;
-  --mid:#7A6E58;--dark:#2A1E14;--white:#FDFAF4;
+  --mid:#4A3F2E;--dark:#2A1E14;--white:#FDFAF4;
   --serif:'Gill Sans MT','Gill Sans','GillSans',Georgia,serif;--body:'Gill Sans MT','Gill Sans','GillSans',Calibri,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -67,9 +67,17 @@ nav{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rgba(
 .cd-wrap{background:var(--clay);padding:64px 5%;position:relative;overflow:hidden;}
 .cd-wrap::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cpolyline points='0,24 12,0 24,24 36,0 48,24' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/svg%3E");background-size:48px 24px;opacity:.05;}
 .cd-inner{max-width:1180px;margin:0 auto;text-align:center;position:relative;z-index:1;}
-.cd-label{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:20px;font-weight:700;}
+.cd-label{font-size:clamp(20px,3vw,28px);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;font-weight:900;}
 .cd-deadline{font-family:'Iansui',serif;font-size:clamp(22px,3.6vw,38px);font-weight:700;color:#fff;margin-bottom:20px;}
 .cd-over{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:28px;}
+.cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.12);border-radius:8px;padding:18px 26px;min-width:92px;box-sizing:border-box;}
+.cd-num{font-family:var(--serif);font-size:clamp(30px,5vw,54px);font-weight:900;color:#fff;line-height:1;}
+.cd-unit-lbl{font-size:13px;color:rgba(255,255,255,.65);margin-top:8px;letter-spacing:.08em;}
+@media(max-width:480px){
+  .cd-unit{min-width:64px;padding:10px 12px;}
+  .cd-num{font-size:clamp(22px,8vw,32px);}
+  #cd-timer{gap:10px;}
+}
 /* CONTENT */
 section{padding:72px 5%;}
 .mx{max-width:1180px;margin:0 auto;}
@@ -127,7 +135,7 @@ section{padding:72px 5%;}
 .info-key{font-size:16px;color:var(--mid);}
 .info-val{font-size:17px;color:var(--dark);font-weight:500;text-align:right;}
 .info-val.past{text-decoration:line-through;opacity:.35;}
-.info-val small{display:block;font-size:12px;color:var(--mid);font-weight:400;}
+.info-val small{display:block;font-size:14px;color:var(--clay);font-weight:700;margin-top:4px;}@keyframes badgeGlow{0%,100%{text-shadow:0 0 4px rgba(196,32,22,.25);}50%{text-shadow:0 0 16px rgba(196,32,22,.8),0 0 6px rgba(196,32,22,.5);}}
 /* FAQ */
 .fq{padding:20px 0;border-bottom:1px solid var(--border);}
 .fq-q{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--dark);margin-bottom:10px;line-height:1.4;}
@@ -171,9 +179,10 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 /* RESPONSIVE */
+.step-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}.step-row::before{content:'';position:absolute;top:18px;left:14px;right:calc(25% - 14px);height:2px;background:var(--border);z-index:0;}.step{padding-top:52px;padding-right:16px;text-align:left;position:relative;}.step-dot{position:absolute;top:4px;left:0;width:28px;height:28px;border-radius:50%;background:var(--clay);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;z-index:1;}.step h3{font-family:'Iansui',serif;font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.35;}.step p{font-size:14px;color:var(--mid);line-height:1.8;}.step-tag{display:inline-block;font-size:11px;color:var(--clay);background:#fae8e6;padding:3px 10px;border-radius:1px;margin-top:10px;}
 @media(max-width:900px){
   .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
-  .stats{grid-template-columns:1fr 1fr;}
+  .stats{grid-template-columns:1fr 1fr;}.step-row{grid-template-columns:1fr 1fr;gap:32px 16px;}.step-row::before{display:none;}
   .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
   .fq-grid .fq:nth-child(even){padding-left:0;}
   .mega-inner{grid-template-columns:1fr;}
@@ -286,7 +295,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
     <li class="nav-item has-mega"><a href="en-collab.html" data-mega="mega-collab">Collaborate</a></li>
     <li class="nav-item has-mega"><a href="en-apply.html" data-mega="mega-apply" class="current">Apply</a></li>
     <li class="nav-item"><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">AIM-I Updates</a></li>
-    <li><a href="en-apply.html" class="nav-apply">Apply Now</a></li>
+    <li><a href="en-apply.html" class="nav-apply" id="nav-apply-link">Apply Now</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="Open Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -319,7 +328,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <div class="mega" id="mega-apply">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">Apply</p><h2 class="mega-headline">You're here.<br>That's a great start.</h2><p class="mega-desc">Certain or not, bring your curiosity. We respond to every question seriously.</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="en-apply.html#qualify">Admission Information</a></li><li><a href="en-apply.html#docs">Eligibility</a></li><li><a href="en-apply.html#faq">FAQ</a></li><li><a href="mailto:zc@mail.nknu.edu.tw" class="hl">✉ Contact Us Directly</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-apply.html#channels">Admission Pathways</a></li><li><a href="en-apply.html#qualify">Admission Information</a></li><li><a href="en-apply.html#scholarship">Scholarships</a></li><li><a href="en-apply.html#faq">FAQ</a></li><li><a href="mailto:zc@mail.nknu.edu.tw" class="hl">✉ Contact Us Directly</a></li></ul></div>
   </div>
 </div>
 <div class="page-hero" style="padding-top:32px;"><div class="page-hero-inner reveal"><p class="page-eyebrow">Apply</p><h1 class="page-title">Not sure if management is right for you?<br>This programme<br><em>was designed for exactly that question.</em></h1><p class="page-lead">You don't need to know whether management is right for you. Your understanding of your community and your care for elders, these are already the best starting point this industry needs.</p></div><div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:160px;"><path d="M0,85 C140,36 300,125 480,78 C660,32 820,112 1000,72 C1160,36 1300,105 1440,74 L1440,160 L0,160 Z" fill="#6B7A38" opacity=".68"/><path d="M0,100 C180,58 360,130 560,92 C760,54 940,118 1140,84 C1280,58 1380,100 1440,90 L1440,160 L0,160 Z" fill="#D4901C" opacity=".52"/><path d="M0,114 C200,84 400,136 620,108 C840,80 1060,128 1280,100 C1360,88 1408,106 1440,100 L1440,160 L0,160 Z" fill="#2A5870" opacity=".65"/><path d="M0,126 C240,108 480,142 720,124 C960,106 1200,138 1440,122 L1440,160 L0,160 Z" fill="#6A4A7A" opacity=".6"/><path d="M0,138 C300,128 600,146 900,136 C1200,126 1350,142 1440,136 L1440,160 L0,160 Z" fill="var(--clay)"/></svg></div></div>
@@ -327,61 +336,208 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <!-- COUNTDOWN -->
 <div class="cd-wrap" id="countdown-section">
   <div class="cd-inner">
-    <p class="cd-label">Application window</p>
-    <p class="cd-deadline" id="deadline-text">Academic Year 2026 · Prospectus releases mid-November 2026</p>
+    <p class="cd-label" id="cd-label">Time Until Registration Closes</p>
+    <div id="cd-timer" style="display:flex;justify-content:center;gap:16px;margin:0 0 24px;flex-wrap:wrap;">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-unit-lbl">Days</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-unit-lbl">Hrs</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-unit-lbl">Min</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-unit-lbl">Sec</span></div>
+    </div>
+    <p class="cd-deadline" id="deadline-text">Academic Year 2026 · Prospectus Released</p>
+    <p style="font-size:15px;color:rgba(255,255,255,.7);margin:-8px 0 20px;">Registration: from 9:00 AM, Thu 10 Dec 2026<br>to 11:59 PM, Thu 7 Jan 2027</p>
     <p class="cd-over" id="cd-over">Questions in the meantime? Get in touch.</p>
     <a href="mailto:zc@mail.nknu.edu.tw" class="btn-white">✉ Questions? Ask us now</a>
   </div>
 </div>
+<script>
+(function(){
+  var startTime = new Date('2026-12-10T09:00:00+08:00').getTime();
+  var deadlineTime = new Date('2027-01-07T23:59:00+08:00').getTime();
+  var elDays = document.getElementById('cd-days');
+  var elHours = document.getElementById('cd-hours');
+  var elMins = document.getElementById('cd-mins');
+  var elSecs = document.getElementById('cd-secs');
+  var elLabel = document.getElementById('cd-label');
+  var elTimer = document.getElementById('cd-timer');
+  var elApplyLink = document.getElementById('apply-link');
+  var elNavApplyLink = document.getElementById('nav-apply-link');
+  var REG_URL = 'https://sso.nknu.edu.tw/Recruit/aboriginal.aspx';
+  function pad(n){ return (n<10?'0':'')+n; }
+  var timer;
+  function tick(){
+    var now = new Date().getTime();
+    if (elApplyLink) {
+      elApplyLink.href = (now >= startTime) ? REG_URL : '#countdown-section';
+    }
+    if (elNavApplyLink) {
+      elNavApplyLink.href = (now >= startTime) ? REG_URL : '#countdown-section';
+    }
+    var target = (now < startTime) ? startTime : deadlineTime;
+    var diff = target - now;
+    if (diff <= 0) {
+      if (target === deadlineTime) {
+        elTimer.style.display = 'none';
+        elLabel.textContent = 'Registration Has Closed';
+        clearInterval(timer);
+      }
+      return;
+    }
+    elLabel.textContent = (target === startTime) ? 'Time Until Registration Opens' : 'Time Until Registration Closes';
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    elDays.textContent = d;
+    elHours.textContent = pad(h);
+    elMins.textContent = pad(m);
+    elSecs.textContent = pad(s);
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+</script>
 
 <div class="wave" style="background:var(--clay);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
-<section><div class="mx"><div class="two-col">
+<section><div class="mx"><div>
   <div style="margin-bottom:44px;" id="channels">
     <p class="eyebrow">Admission Channel</p>
     <h2 class="sh" style="margin-bottom:20px;">How do I apply to AIM-I?</h2>
     <p style="font-size:17px;color:var(--mid);line-height:1.95;margin-bottom:28px;">AIM-I conducts its own <strong style="color:var(--dark);">independent recruitment</strong>, organised directly by National Kaohsiung Normal University. It does not go through the University Entrance Committee for Individualized Study (UCAS), and is completely separate from Constellation, Individual Application, or Exam-based streams.</p>
     <div class="card card-r" style="margin-bottom:16px;border-width:2px;">
       <h3 style="font-size:17px;margin-bottom:10px;color:var(--dark);">Independent Recruitment: AIM-I Exclusive</h3>
-      <p style="font-size:15px;color:var(--mid);line-height:1.85;">This programme was approved by the Ministry of Education in early 2026. The university conducts its own admission process every year, with the application period usually announced around <strong style="color:var(--dark);">November</strong>. Please check this programme's website and <a href="#countdown-section" style="color:var(--clay);font-weight:700;">apply as soon as it opens</a>.</p>
+      <p style="font-size:15px;color:var(--mid);line-height:1.85;">This programme was approved by the Ministry of Education in early 2026. The university conducts its own admission process every year. <strong style="color:var(--dark);">The AY2026 prospectus has been released</strong>: registration runs from 9:00 AM, Thu 10 Dec 2026 to 11:59 PM, Thu 7 Jan 2027, so be sure to <a href="#countdown-section" style="color:var(--clay);font-weight:700;">apply before it closes</a>.</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
       <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
-        <h3 style="font-size:15px;margin-bottom:6px;">Application System</h3>
-        <p style="font-size:13px;color:var(--mid);">NKNU Online Recruitment System<br>(sso.nknu.edu.tw)</p>
-      </div>
-      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
-        <h3 style="font-size:15px;margin-bottom:6px;">Prospectus</h3>
-        <p style="font-size:13px;color:var(--mid);">Available for free download on the<br>NKNU Office of Academic Affairs website</p>
-      </div>
-      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
         <h3 style="font-size:15px;margin-bottom:6px;">Selection Process</h3>
-        <p style="font-size:13px;color:var(--mid);">Portfolio review + Interview<br>(see prospectus for details)</p>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">Portfolio Review (40%): transcript, personal statement, etc.<br>Interview (60%): motivation, understanding of the curriculum</p>
       </div>
       <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
-        <h3 style="font-size:15px;margin-bottom:6px;">Other Channels</h3>
-        <p style="font-size:13px;color:var(--mid);">Completely separate from Constellation,<br>Individual Application and Exam streams</p>
+        <h3 style="font-size:15px;margin-bottom:6px;">College</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">College of Management<br>Ageing Industry Management Programme for Indigenous Students</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:15px;margin-bottom:6px;">Enrolment Quota</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">25 students<br>(subject to the year's prospectus)</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:15px;margin-bottom:6px;">Score Calculation</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">Portfolio Review score × 40%<br>+ Interview score × 60%</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:15px;margin-bottom:6px;">Tie-Breaking Order</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">(1) Interview score<br>(2) Portfolio Review score</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:15px;margin-bottom:6px;">Teaching Credential Eligibility</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">May enrol in a teacher education programme during studies<br>(secondary-school track requires a double major or minor)</p>
       </div>
     </div>
   </div>
 
   <div id="qualify">
     <p class="eyebrow">Admission Information</p>
-    <h2 class="sh" style="margin-bottom:28px;">Academic Year 2026</h2>
+    <h2 class="sh" style="margin-bottom:28px;">AY2026 Indigenous Bachelor's Programme Admission Exam</h2>
     <div class="info-table reveal">
-      <div class="info-row"><span class="info-key">Prospectus Release</span><span class="info-val">Mid-November 2026</span></div>
-      <div class="info-row"><span class="info-key">Application Period</span><span class="info-val">Early December 2026 – Early January 2027</span></div>
-      <div class="info-row"><span class="info-key">Interview Date</span><span class="info-val">13 Feb 2027 (Sat)<small>Meilun Junior High School, Hualien</small><br>14 Feb 2027 (Sun)<small>National Kaohsiung Normal University</small></span></div>
-      <div class="info-row"><span class="info-key">Results Announced</span><span class="info-val">[To be announced]</span></div>
+      <div class="info-row"><span class="info-key">Online Registration & Payment</span><span class="info-val">From 9:00 AM, Thu 10 Dec 2026<br>to 11:59 PM, Thu 7 Jan 2027</span></div>
+      <div class="info-row"><span class="info-key">Registration Fee</span><span class="info-val">NT$900<small>Free for low-income households; partial waiver for lower-middle-income households and senior applicants</small></span></div>
+      <div class="info-row"><span class="info-key">Entering/Editing/Uploading Application Materials</span><span class="info-val">From 9:00 AM, Thu 10 Dec 2026<br>to 11:59 PM, Fri 8 Jan 2027</span></div>
+      <div class="info-row"><span class="info-key">Print Your Own Admission Ticket</span><span class="info-val">Available from 9:00 AM, Tue 2 Feb 2027<br>Download and print online<small>You must bring your ID and admission ticket to the interview; no ticket will be mailed. Please check online in time — the university is not responsible for any loss resulting from a failure to confirm in time.</small></span></div>
+      <div class="info-row"><span class="info-key">Interview Date</span><span class="info-val">13 Feb 2027 (Sat)<small>Meilun Junior High School, Hualien</small><br>14 Feb 2027 (Sun)<small>National Kaohsiung Normal University, Heping Campus</small></span></div>
+      <div class="info-row"><span class="info-key">Results Announced</span><span class="info-val">By 5:00 PM, Fri 5 Mar 2027 (expected)</span></div>
+      <div class="info-row"><span class="info-key">Score Review Deadline</span><span class="info-val">Fri 12 Mar 2027</span></div>
+      <div class="info-row"><span class="info-key">Admitted-Student Enrolment Deadline</span><span class="info-val">By Fri 26 Mar 2027<small>Enrol by mail</small></span></div>
+      <div class="info-row"><span class="info-key">Waitlisted-Student Intent Registration</span><span class="info-val">After results are announced, by Fri 26 Mar 2027<small>Register online; failing to register by the deadline is treated as voluntarily giving up admission.</small></span></div>
+      <div class="info-row"><span class="info-key">Waitlisted-Student Enrolment Deadline</span><span class="info-val">If vacancies remain, waitlisted applicants are notified in score order<small>Admission remains open through the working day before the start of AY2026 Semester 1 classes, per the university calendar</small></span></div>
+      <div class="info-row"><span class="info-key">College</span><span class="info-val">College of Management</span></div>
+      <div class="info-row"><span class="info-key">Enrolment Quota</span><span class="info-val">25 students</span></div>
+      <div class="info-row"><span class="info-key">Selection Components</span><span class="info-val" style="font-weight:700;">Portfolio Review (40%) + Interview (60%)</span></div>
       <div class="info-row"><span class="info-key">Eligibility</span><span class="info-val">Indigenous identity required<small>Senior high school graduate</small></span></div>
-      <div class="info-row"><span class="info-key">Duration</span><span class="info-val">4 Years<small>Bachelor's Degree</small></span></div>
+      <div class="info-row"><span class="info-key">Duration</span><span class="info-val">4 Years<small style="display:block;font-size:21px;color:var(--clay);font-weight:900;margin-top:6px;animation:badgeGlow 2s ease-in-out infinite;">✦ Bachelor of Commerce</small></span></div>
       <div class="info-row"><span class="info-key">Campus</span><span class="info-val">Heping Campus<small>Lingya District, Kaohsiung</small></span></div>
     </div>
-    <div class="btns"><a href="#" class="btn-fill">Online Application</a><a href="#" class="btn-ghost">Download Prospectus</a></div>
+    <div style="background:var(--cream);border:1px solid #D4C4A8;border-radius:4px;padding:20px 24px;margin:28px 0;">
+      <h3 style="font-size:16px;margin-bottom:12px;color:var(--dark);">Eligibility</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
+        <p style="font-size:14px;color:var(--mid);line-height:1.7;">✓ Current or past graduate of senior high/vocational school, or equivalent qualification</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.7;">✓ Must hold Indigenous status</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.7;">✓ Overseas credentials require Ministry of Education verification</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.7;">✓ May apply to multiple programmes, but must register and pay separately; if admitted to more than one, only one enrolment is allowed</p>
+      </div>
+      <p style="font-size:12px;color:var(--clay);margin-top:12px;">See that year's prospectus for the full regulations.</p>
+    </div>
+    <div style="margin:28px 0;display:flex;flex-direction:column;gap:16px;">
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;display:flex;gap:32px;align-items:flex-start;padding:28px 32px;">
+        <div style="flex:0 0 170px;"><h3 style="font-size:19px;color:var(--dark);line-height:1.4;">Portfolio Review<br><span style="color:var(--clay);font-size:17px;">(40%)</span></h3></div>
+        <div style="flex:1;min-width:0;">
+          <p style="font-size:14px;color:var(--mid);line-height:1.9;">1. Official high school transcript.<br>2. Personal statement.<br>3. Other supporting materials (e.g. creative/activity portfolios, certifications, club involvement, work experience, community service, competition results or other notable achievements).<br>4. All documents must be clear and legible; photograph any medals, trophies or physical work samples.</p>
+          <p style="font-size:13px;color:var(--clay);margin-top:10px;">※ Upload your portfolio materials as digital files during registration; see that year's prospectus for upload instructions.</p>
+        </div>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;display:flex;gap:32px;align-items:flex-start;padding:28px 32px;">
+        <div style="flex:0 0 170px;"><h3 style="font-size:19px;color:var(--dark);line-height:1.4;">Interview<br><span style="color:var(--clay);font-size:17px;">(60%)</span></h3></div>
+        <div style="flex:1;min-width:0;">
+          <p style="font-size:14px;color:var(--mid);line-height:1.9;">1. Your motivation for applying.<br>2. Your understanding of the programme's curriculum and your future study plans.<br>3. Candidates may bring supporting materials to the interview (e.g. portfolios, competition results, certifications, club involvement, work experience, community service, or other notable achievements).</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--cream);border:1px solid #D4C4A8;border-radius:4px;padding:20px 24px;margin-bottom:28px;">
+      <p style="font-size:14px;color:var(--mid);line-height:1.9;"><strong style="color:var(--dark);">Score calculation:</strong> Total score = Portfolio Review score × 40% + Interview score × 60%.<br><strong style="color:var(--dark);">Tie-breaking order:</strong> (1) Interview score (2) Portfolio Review score.<br><strong style="color:var(--dark);">Teaching credential pathway:</strong> Students who wish to pursue a teaching credential for elementary or secondary education may, during their studies, follow NKNU's "Regulations on Taking Teacher Education Programmes," pass the assessment administered by the Office of Teacher Education and Career Services, and qualify to enrol in a teacher education programme (students pursuing a secondary-school teaching credential must complete a double major or minor during their studies).</p>
+    </div>
+        <h3 class="sh" style="font-size:22px;margin:40px 0 24px;">Registration Steps</h3>
+    <div class="step-row reveal">
+      <div class="step">
+        <div class="step-dot">1</div>
+        <h3>Complete Your Registration</h3>
+        <p>Fill in your personal details and programme preferences in the online registration system.</p>
+      </div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <h3>Get Your Transfer Code & Pay</h3>
+        <p>Obtain your bank transfer code online and complete payment (see that year's prospectus for fee-waiver eligibility).</p>
+      </div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <h3>Upload Required Documents</h3>
+        <p>Photo, ID, academic credentials, proof of Indigenous status, plus your programme's portfolio review materials, in the required format.</p>
+        <span class="step-tag">File requirements below</span>
+      </div>
+      <div class="step">
+        <div class="step-dot">4</div>
+        <h3>Registration Complete</h3>
+        <p>Once payment is confirmed and all required data and documents are fully uploaded, your registration is complete.</p>
+      </div>
+    </div>
+    <div style="background:var(--cream);border:1px solid #D4C4A8;border-radius:4px;padding:20px 24px;margin:16px 0 28px;">
+      <p style="font-size:14px;color:var(--mid);line-height:1.9;"><strong style="color:var(--dark);">File formats:</strong> ID (both sides) and academic/credential documents must be jpg, jpeg, png or pdf, 10MB or less per file.<br><strong style="color:var(--dark);">Portfolio review materials:</strong> merge into a single PDF, 50MB or less; if larger, provide a cloud-storage link with viewing access enabled (export Canva files as PDF rather than sharing a link only).<br><strong style="color:var(--dark);">Note:</strong> candidates are responsible for any score impact caused by incomplete or late uploads, and no refund will be issued.</p>
+    </div>
+    <h3 class="sh" style="font-size:22px;margin:0 0 24px;">Interview & Scoring Rules</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">Interview Guidelines</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;">1. Your interview location is selected at registration and cannot be changed afterward.<br>2. Check-in time and location will be announced separately on the university website — please check regularly.<br>3. Bring your admission ticket and original ID (national ID / passport / photo ID health card / driver's licence) to the interview.</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">Scoring & Admission Rules</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;">1. Each component is scored out of 100 points; the total is calculated to two decimal places.<br>2. A score of zero or an absence on any component disqualifies the candidate.<br>3. The admissions committee sets a minimum cut-off; admitted candidates fill the available places, with the rest waitlisted (no waitlist if too few candidates meet the cut-off).<br>4. No bonus points apply to any special-status candidates.</p>
+      </div>
+    </div>
+    <h3 class="sh" style="font-size:22px;margin:0 0 24px;">Check-In & Enrolment</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">Admitted & Waitlisted Candidate Check-In</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;">1. Check-in is by mail only; the postmark date determines the deadline, and a late submission is treated as forfeiting the offer.<br>2. Waitlist offers are announced in batches on the check-in system — please check regularly, as phone enquiries are not accepted.<br>3. Waitlist notices may also come by phone, email, or text, so please make sure your contact details are accurate.</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">Registration & Enrolment</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;">1. Admitted students must complete enrolment by the specified date; failure to do so cancels admission.<br>2. Payment, health check, and enrolment details will be announced around June–July; submit your student status form and diploma by mid-July.<br>3. Tuition and fee rates follow the university's published schedule; Indigenous students may apply for fee waivers.<br>4. Admission cannot be deferred; students may transfer between Indigenous programmes but not out of them.</p>
+      </div>
+    </div>
+<div class="btns"><a href="#countdown-section" id="apply-link" class="btn-fill">Online Application</a><a href="#" class="btn-ghost">Download Prospectus</a></div>
   </div>
-  <div id="scholarship">
-    <p class="eyebrow">Eligibility & Scholarships</p>
+  <div id="scholarship" style="margin-top:64px;">
+    <p class="eyebrow">Scholarships</p>
     <h2 class="sh" style="margin-bottom:24px;">What can you apply for?</h2>
-    <div class="card card-r" style="margin-bottom:12px;"><h3>Eligibility</h3><p>Applicants must hold indigenous identity status (official documentation required). Current or past senior high school or vocational school graduates are welcome to apply.</p></div>
     <div class="card card-t" style="margin-bottom:12px;" id="docs"><h3>Documents to Prepare</h3>
       <ul style="font-size:15px;color:var(--mid);line-height:2.0;padding-left:18px;margin-top:8px;">
         <li>Indigenous identity documentation (household registration or tribal certificate)</li>
@@ -404,7 +560,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <section class="dark-section" style="background:var(--clay);" id="contact">
   <div class="mx"><div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" class="reveal">
     <div><p class="eyebrow eyebrow-lt">Contact Us Directly</p><h2 class="sh sh-lt" style="margin-bottom:16px;">Questions, or just want to talk?</h2><p style="font-size:18px;color:rgba(255,255,255,.55);line-height:1.85;margin-bottom:32px;">We respond within 2 working days. Whether you're sure or still figuring it out, you're welcome to reach out.</p><a href="mailto:zc@mail.nknu.edu.tw" class="btn-white">✉ Write to Us</a></div>
-    <div style="font-size:16px;color:rgba(255,255,255,.55);line-height:2.0;"><p>✉ <a href="mailto:zc@mail.nknu.edu.tw" style="color:var(--amber);">zc@mail.nknu.edu.tw</a></p><p>📞 +886-7-717-2930 ext. 2253</p><p>⏰ Monday to Friday, 09:00–17:00</p><p>📍 No.116, Heping 1st Rd., Lingya Dist.<br>&nbsp;&nbsp;&nbsp;&nbsp;Kaohsiung 802, Taiwan<br>&nbsp;&nbsp;&nbsp;&nbsp;(Heping Campus)</p></div>
+    <div style="font-size:16px;color:rgba(255,255,255,.55);line-height:2.0;"><p>✉ <a href="mailto:zc@mail.nknu.edu.tw" style="color:var(--amber);">zc@mail.nknu.edu.tw</a></p><p>📞 +886-7-717-2930 ext. 2253　Ms. Liu</p><p>⏰ Monday to Friday, 09:00–17:00</p><p>📍 No.116, Heping 1st Rd., Lingya Dist.<br>&nbsp;&nbsp;&nbsp;&nbsp;Kaohsiung 802, Taiwan<br>&nbsp;&nbsp;&nbsp;&nbsp;(Heping Campus)</p></div>
   </div></div>
 </section><div class="wave" style="background:var(--clay);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
 <section id="faq"><div class="mx"><p class="eyebrow">FAQ</p><h2 class="sh" style="margin-bottom:44px;">Questions you might want to ask</h2>

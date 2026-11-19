@@ -19,7 +19,7 @@
   --clay:#C42016;--clay-lt:#D94030;--earth:#2A1E14;--olive:#6B7A38;
   --purple:#6A4A7A;--teal:#2A5870;--amber:#D4901C;
   --cream:#F5F0E2;--parch:#EDE5D0;--fog:#E0D8C4;--border:#C8BFA8;
-  --mid:#7A6E58;--dark:#2A1E14;--white:#FDFAF4;
+  --mid:#4A3F2E;--dark:#2A1E14;--white:#FDFAF4;
   --serif:'Iansui',serif;--body:'Iansui','DFKai-SB',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -76,9 +76,17 @@ nav{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rgba(
 .cd-wrap{background:var(--clay);padding:64px 5%;position:relative;overflow:hidden;}
 .cd-wrap::after{content:'';position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24'%3E%3Cpolyline points='0,24 12,0 24,24 36,0 48,24' fill='none' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/svg%3E");background-size:48px 24px;opacity:.05;}
 .cd-inner{max-width:1180px;margin:0 auto;text-align:center;position:relative;z-index:1;}
-.cd-label{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:20px;font-weight:700;}
+.cd-label{font-size:clamp(20px,3vw,28px);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;font-weight:900;}
 .cd-deadline{font-family:'Iansui',serif;font-size:clamp(22px,3.6vw,38px);font-weight:700;color:#fff;margin-bottom:20px;}
 .cd-over{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:28px;}
+.cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.12);border-radius:8px;padding:18px 26px;min-width:92px;box-sizing:border-box;}
+.cd-num{font-family:var(--serif);font-size:clamp(30px,5vw,54px);font-weight:900;color:#fff;line-height:1;}
+.cd-unit-lbl{font-size:13px;color:rgba(255,255,255,.65);margin-top:8px;letter-spacing:.08em;}
+@media(max-width:480px){
+  .cd-unit{min-width:64px;padding:10px 12px;}
+  .cd-num{font-size:clamp(22px,8vw,32px);}
+  #cd-timer{gap:10px;}
+}
 /* CONTENT */
 section{padding:72px 5%;}
 .mx{max-width:1180px;margin:0 auto;}
@@ -136,7 +144,7 @@ section{padding:72px 5%;}
 .info-key{font-size:16px;color:var(--mid);}
 .info-val{font-size:17px;color:var(--dark);font-weight:500;text-align:right;}
 .info-val.past{text-decoration:line-through;opacity:.35;}
-.info-val small{display:block;font-size:12px;color:var(--mid);font-weight:400;}
+.info-val small{display:block;font-size:14px;color:var(--clay);font-weight:700;margin-top:4px;}@keyframes badgeGlow{0%,100%{text-shadow:0 0 4px rgba(196,32,22,.25);}50%{text-shadow:0 0 16px rgba(196,32,22,.8),0 0 6px rgba(196,32,22,.5);}}
 /* FAQ */
 .fq{padding:20px 0;border-bottom:1px solid var(--border);}
 .fq-q{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--dark);margin-bottom:10px;line-height:1.4;}
@@ -180,9 +188,10 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 /* RESPONSIVE */
+.step-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}.step-row::before{content:'';position:absolute;top:18px;left:14px;right:calc(25% - 14px);height:2px;background:var(--border);z-index:0;}.step{padding-top:52px;padding-right:16px;text-align:left;position:relative;}.step-dot{position:absolute;top:4px;left:0;width:28px;height:28px;border-radius:50%;background:var(--clay);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;z-index:1;}.step h3{font-family:'Iansui',serif;font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.35;}.step p{font-size:14px;color:var(--mid);line-height:1.8;}.step-tag{display:inline-block;font-size:11px;color:var(--clay);background:#fae8e6;padding:3px 10px;border-radius:1px;margin-top:10px;}
 @media(max-width:900px){
   .two-col,.three-col,.four-col,.yr-row,.fq-grid,.ft{grid-template-columns:1fr;}
-  .stats{grid-template-columns:1fr 1fr;}
+  .stats{grid-template-columns:1fr 1fr;}.step-row{grid-template-columns:1fr 1fr;gap:32px 16px;}.step-row::before{display:none;}
   .fq-grid .fq:nth-child(odd){padding-right:0;border-right:none;}
   .fq-grid .fq:nth-child(even){padding-left:0;}
   .mega-inner{grid-template-columns:1fr;}
@@ -294,7 +303,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
     <li class="nav-item has-mega"><a href="collab.html" data-mega="mega-collab">合作</a></li>
     <li class="nav-item has-mega"><a href="apply.html" data-mega="mega-apply" class="current">申請</a></li>
     <li class="nav-item"><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">AIM-I 動態</a></li>
-    <li><a href="apply.html" class="nav-apply">立即報名</a></li>
+    <li><a href="apply.html" class="nav-apply" id="nav-apply-link">立即報名</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="開啟選單" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -309,7 +318,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <div class="mega" id="mega-learn">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">學習</p><h2 class="mega-headline">知識是地圖，<br>能力是步伐，<br><em>文化是方向。</em></h2><p class="mega-desc">三個核心能力，搭配四年真實場域的學習旅程。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li><li><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">最新消息</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-people">
@@ -327,7 +336,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <div class="mega" id="mega-apply">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">申請</p><h2 class="mega-headline">你來了，<br>就對了。</h2><p class="mega-desc">不管你現在確定不確定，帶著你的好奇心來就夠了。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="apply.html#qualify">招生資訊</a></li><li><a href="apply.html#docs">申請資格</a></li><li><a href="apply.html#faq">常見問題</a></li><li><a href="mailto:zc@mail.nknu.edu.tw" class="hl">✉ 直接聯絡我們</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="apply.html#channels">入學管道</a></li><li><a href="apply.html#qualify">招生資訊</a></li><li><a href="apply.html#scholarship">獎學金申請</a></li><li><a href="apply.html#faq">常見問題</a></li><li><a href="mailto:zc@mail.nknu.edu.tw" class="hl">✉ 直接聯絡我們</a></li></ul></div>
   </div>
 </div>
 <div class="page-hero" style="padding-top:32px;"><div class="page-hero-inner reveal"><p class="page-eyebrow">申請</p><h1 class="page-title">不確定自己是否適合做管理？<br>這門學程，<em>就是為這個問題而設計的。</em></h1><p class="page-lead">你不需要先弄清楚自己是否適合做管理。你對族群的了解、你對長輩的關心，這些就是這個產業最需要的起點。</p></div><div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:160px;"><path d="M0,85 C140,36 300,125 480,78 C660,32 820,112 1000,72 C1160,36 1300,105 1440,74 L1440,160 L0,160 Z" fill="#6B7A38" opacity=".68"/><path d="M0,100 C180,58 360,130 560,92 C760,54 940,118 1140,84 C1280,58 1380,100 1440,90 L1440,160 L0,160 Z" fill="#D4901C" opacity=".52"/><path d="M0,114 C200,84 400,136 620,108 C840,80 1060,128 1280,100 C1360,88 1408,106 1440,100 L1440,160 L0,160 Z" fill="#2A5870" opacity=".65"/><path d="M0,126 C240,108 480,142 720,124 C960,106 1200,138 1440,122 L1440,160 L0,160 Z" fill="#6A4A7A" opacity=".6"/><path d="M0,138 C300,128 600,146 900,136 C1200,126 1350,142 1440,136 L1440,160 L0,160 Z" fill="var(--clay)"/></svg></div></div>
@@ -335,61 +344,208 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <!-- COUNTDOWN -->
 <div class="cd-wrap" id="countdown-section">
   <div class="cd-inner">
-    <p class="cd-label">距離報名及截止</p>
-    <p class="cd-deadline" id="deadline-text">116 學年度 · 簡章 115年11月中旬公布</p>
+    <p class="cd-label" id="cd-label">距離報名截止</p>
+    <div id="cd-timer" style="display:flex;justify-content:center;gap:16px;margin:0 0 24px;flex-wrap:wrap;">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-unit-lbl">天</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-unit-lbl">時</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-unit-lbl">分</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-unit-lbl">秒</span></div>
+    </div>
+    <p class="cd-deadline" id="deadline-text">116 學年度 · 簡章 已公布</p>
+    <p style="font-size:15px;color:rgba(255,255,255,.7);margin:-8px 0 20px;">報名：115年12月10日(四)09:00 起<br>至 116年01月07日(四)23:59 止</p>
     <p class="cd-over" id="cd-over">如有疑問請聯繫我們。</p>
     <a href="mailto:zc@mail.nknu.edu.tw" class="btn-white">✉ 有問題，現在就問</a>
   </div>
 </div>
+<script>
+(function(){
+  var startTime = new Date('2026-12-10T09:00:00+08:00').getTime();
+  var deadlineTime = new Date('2027-01-07T23:59:00+08:00').getTime();
+  var elDays = document.getElementById('cd-days');
+  var elHours = document.getElementById('cd-hours');
+  var elMins = document.getElementById('cd-mins');
+  var elSecs = document.getElementById('cd-secs');
+  var elLabel = document.getElementById('cd-label');
+  var elTimer = document.getElementById('cd-timer');
+  var elApplyLink = document.getElementById('apply-link');
+  var elNavApplyLink = document.getElementById('nav-apply-link');
+  var REG_URL = 'https://sso.nknu.edu.tw/Recruit/aboriginal.aspx';
+  function pad(n){ return (n<10?'0':'')+n; }
+  var timer;
+  function tick(){
+    var now = new Date().getTime();
+    if (elApplyLink) {
+      elApplyLink.href = (now >= startTime) ? REG_URL : '#countdown-section';
+    }
+    if (elNavApplyLink) {
+      elNavApplyLink.href = (now >= startTime) ? REG_URL : '#countdown-section';
+    }
+    var target = (now < startTime) ? startTime : deadlineTime;
+    var diff = target - now;
+    if (diff <= 0) {
+      if (target === deadlineTime) {
+        elTimer.style.display = 'none';
+        elLabel.textContent = '報名已截止';
+        clearInterval(timer);
+      }
+      return;
+    }
+    elLabel.textContent = (target === startTime) ? '距離報名開始' : '距離報名截止';
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    elDays.textContent = d;
+    elHours.textContent = pad(h);
+    elMins.textContent = pad(m);
+    elSecs.textContent = pad(s);
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+</script>
 
 <div class="wave" style="background:var(--clay);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
-<section><div class="mx"><div class="two-col">
+<section><div class="mx"><div>
   <div style="margin-bottom:44px;" id="channels">
     <p class="eyebrow">入學管道</p>
     <h2 class="sh" style="margin-bottom:20px;">AIM-I 怎麼申請？</h2>
     <p style="font-size:17px;color:var(--mid);line-height:1.95;margin-bottom:28px;">AIM-I 採<strong style="color:var(--dark);">學校單獨招生</strong>方式，由國立高雄師範大學自行辦理，不透過大學考試入學分發管理委員會，也不走繁星、個人申請或考試分發等一般管道。</p>
     <div class="card card-r" style="margin-bottom:16px;border-width:2px;">
       <h3 style="font-size:17px;margin-bottom:10px;color:var(--dark);">單獨招生 —— AIM-I 專屬管道</h3>
-      <p style="font-size:15px;color:var(--mid);line-height:1.85;">本專班由教育部於115年初核定成立，每年自辦招生考試，報名期間約在<strong style="color:var(--dark);">每年11月左右</strong>公布，敬請關注本專班網站，<a href="#countdown-section" style="color:var(--clay);font-weight:700;">立即報名</a>。</p>
+      <p style="font-size:15px;color:var(--mid);line-height:1.85;">本專班由教育部於115年初核定成立，每年自辦招生考試。<strong style="color:var(--dark);">116學年度招生簡章已公布</strong>，報名自115年12月10日(四)09:00起，至116年01月07日(四)23:59止，敬請把握時間，<a href="#countdown-section" style="color:var(--clay);font-weight:700;">立即報名</a>。</p>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
       <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
-        <h3 style="font-size:15px;margin-bottom:6px;">報名系統</h3>
-        <p style="font-size:13px;color:var(--mid);">高師大網路招生報名系統<br>（sso.nknu.edu.tw）</p>
-      </div>
-      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
-        <h3 style="font-size:15px;margin-bottom:6px;">招生簡章</h3>
-        <p style="font-size:13px;color:var(--mid);">高師大教務處招生企劃組網頁<br>可免費下載</p>
-      </div>
-      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
         <h3 style="font-size:15px;margin-bottom:6px;">考試方式</h3>
-        <p style="font-size:13px;color:var(--mid);">書面審查 + 面試<br>（詳見當年度招生簡章）</p>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">書面審查(40%)：成績單、自傳等書面資料<br>面試(60%)：學習動機、課程規劃理解</p>
       </div>
       <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
-        <h3 style="font-size:15px;margin-bottom:6px;">與其他管道</h3>
-        <p style="font-size:13px;color:var(--mid);">與繁星、個人申請、分發<br>完全分開，不互相影響</p>
+        <h3 style="font-size:15px;margin-bottom:6px;">所屬學院</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">管理學院<br>高齡產業經營學士原住民專班</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:15px;margin-bottom:6px;">招生名額</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">25 名<br>（依當年度招生簡章為準）</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:15px;margin-bottom:6px;">總成績計算</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">書面審查成績×40%<br>＋面試成績×60%</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:15px;margin-bottom:6px;">同分參酌順序</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">(一) 面試成績<br>(二) 書面審查成績</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:15px;margin-bottom:6px;">教育學程資格</h3>
+        <p style="font-size:14px;color:var(--dark);font-weight:500;line-height:1.7;">在校期間可依規定修讀<br>（中等學校類科須修雙主修或輔系）</p>
       </div>
     </div>
   </div>
 
   <div id="qualify">
     <p class="eyebrow">招生資訊</p>
-    <h2 class="sh" style="margin-bottom:28px;">116學年度招生</h2>
+    <h2 class="sh" style="margin-bottom:28px;">116學年度學士原住民專班招生考試</h2>
     <div class="info-table reveal">
-      <div class="info-row"><span class="info-key">簡章下載</span><span class="info-val">115年11月中旬公布</span></div>
-      <div class="info-row"><span class="info-key">報名期間</span><span class="info-val">115年12月上旬–116年1月上旬</span></div>
-      <div class="info-row"><span class="info-key">面試日期</span><span class="info-val">116年2月13日(六)<small>花蓮美崙國中</small><br>116年2月14日(日)<small>國立高雄師範大學</small></span></div>
-      <div class="info-row"><span class="info-key">放榜日期</span><span class="info-val">【待公告】</span></div>
+      <div class="info-row"><span class="info-key">網路報名、繳費</span><span class="info-val">115年12月10日(星期四)09：00起<br>至116年01月07日(星期四)23：59止</span></div>
+      <div class="info-row"><span class="info-key">報名費用</span><span class="info-val">新台幣900元<small>低收入戶免費・中低收入戶及高齡者部分減免</small></span></div>
+      <div class="info-row"><span class="info-key">報名資料填寫、修改、上傳</span><span class="info-val">115年12月10日(星期四)09：00起<br>至116年01月08日(星期五)23：59止</span></div>
+      <div class="info-row"><span class="info-key">自行上網列印「應考證」</span><span class="info-val">116年02月02日(星期二)09：00起<br>開放下載列印<small>務必攜帶身分證件及應考證併同應試；不另寄發，請考生上網查詢，若未及時確認致權益受損，由考生自行負責。</small></span></div>
+      <div class="info-row"><span class="info-key">面試日期</span><span class="info-val">116年2月13日(六)<small>花蓮美崙國中</small><br>116年2月14日(日)<small>國立高雄師範大學 和平校區</small></span></div>
+      <div class="info-row"><span class="info-key">放榜日期</span><span class="info-val">預定116年03月05日(星期五)17：00前</span></div>
+      <div class="info-row"><span class="info-key">成績複查截止日</span><span class="info-val">116年03月12日(星期五)</span></div>
+      <div class="info-row"><span class="info-key">正取生報到截止日</span><span class="info-val">116年03月26日(星期五)前<small>通訊報到</small></span></div>
+      <div class="info-row"><span class="info-key">備取生登錄遞補意願</span><span class="info-val">放榜後至116年03月26日(星期五)前<small>網路登錄；未於期限內完成登錄者，即以自願放棄入學論。</small></span></div>
+      <div class="info-row"><span class="info-key">備取生報到截止日</span><span class="info-val">如有缺額按成績依次通知遞補<small>遞補至本校行事曆所定116學年度第一學期開始上課之前一工作日</small></span></div>
+      <div class="info-row"><span class="info-key">所屬學院</span><span class="info-val">管理學院</span></div>
+      <div class="info-row"><span class="info-key">招生名額</span><span class="info-val">25 名</span></div>
+      <div class="info-row"><span class="info-key">考試項目</span><span class="info-val" style="font-weight:700;">書面審查(40%) + 面試(60%)</span></div>
       <div class="info-row"><span class="info-key">申請資格</span><span class="info-val">具原住民族身份<small>高中職畢業生</small></span></div>
-      <div class="info-row"><span class="info-key">修業年限</span><span class="info-val">四年<small>學士學位</small></span></div>
+      <div class="info-row"><span class="info-key">修業年限</span><span class="info-val">四年<small style="display:block;font-size:21px;color:var(--clay);font-weight:900;margin-top:6px;animation:badgeGlow 2s ease-in-out infinite;">✦ 商學學士</small></span></div>
       <div class="info-row"><span class="info-key">上課地點</span><span class="info-val">和平校區<small>高雄市苓雅區</small></span></div>
     </div>
-    <div class="btns"><a href="#" class="btn-fill">線上報名</a><a href="#" class="btn-ghost">下載招生簡章</a></div>
+    <div style="background:var(--cream);border:1px solid #D4C4A8;border-radius:4px;padding:20px 24px;margin:28px 0;">
+      <h3 style="font-size:16px;margin-bottom:12px;color:var(--dark);">報考資格</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;">
+        <p style="font-size:14px;color:var(--mid);line-height:1.7;">✓ 高中(職)應屆或已畢業，或具同等學力</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.7;">✓ 須具原住民族身分</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.7;">✓ 境外學歷需完成教育部採認驗證</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.7;">✓ 可同時報考多專班，但須分別報名、繳費，錄取僅能擇一報到</p>
+      </div>
+      <p style="font-size:12px;color:var(--clay);margin-top:12px;">完整規定請見當年度招生簡章。</p>
+    </div>
+    <div style="margin:28px 0;display:flex;flex-direction:column;gap:16px;">
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;display:flex;gap:32px;align-items:flex-start;padding:28px 32px;">
+        <div style="flex:0 0 150px;"><h3 style="font-size:19px;color:var(--dark);line-height:1.4;">書面審查<br><span style="color:var(--clay);font-size:17px;">（40%）</span></h3></div>
+        <div style="flex:1;min-width:0;">
+          <p style="font-size:14px;color:var(--mid);line-height:1.9;">一、高中(職)歷年成績單。<br>二、自傳。<br>三、其他有助審查之相關資料（例如：學習活動成果作品、證照、社團表現、工讀與工作經驗、社會服務經歷、競賽參賽或特殊表現等）。<br>四、各式證明文件需清晰，獎牌、獎盃、作品等請以拍照方式呈現。</p>
+          <p style="font-size:13px;color:var(--clay);margin-top:10px;">※書面審查資料請於報名時上傳電子檔，上傳方式詳見當年度招生簡章。</p>
+        </div>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;display:flex;gap:32px;align-items:flex-start;padding:28px 32px;">
+        <div style="flex:0 0 150px;"><h3 style="font-size:19px;color:var(--dark);line-height:1.4;">面試<br><span style="color:var(--clay);font-size:17px;">（60%）</span></h3></div>
+        <div style="flex:1;min-width:0;">
+          <p style="font-size:14px;color:var(--mid);line-height:1.9;">一、學習動機。<br>二、對於本專班的課程規劃理解及未來學習規劃陳述。<br>三、考生可攜帶有助於面試之相關資料（例如：作品集、競賽成績、相關證照文件、社團活動參與、工讀與工作經驗、社會服務經歷、特殊表現等）。</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--cream);border:1px solid #D4C4A8;border-radius:4px;padding:20px 24px;margin-bottom:28px;">
+      <p style="font-size:14px;color:var(--mid);line-height:1.9;"><strong style="color:var(--dark);">總成績計算：</strong>總成績＝書面審查成績×40%＋面試成績×60%。<br><strong style="color:var(--dark);">同分參酌順序：</strong>(一) 面試成績　(二) 書面審查成績。<br><strong style="color:var(--dark);">教育學程：</strong>本專班學生欲修習國民小學或中等學校師資類科教育學程者，可於在校期間依本校「學生修習教育學程辦法」，通過師資培育與就業輔導處考試，取得修讀教育學程資格（欲修習中等學校師資類科者在校期間須修習雙主修或輔系）。</p>
+    </div>
+        <h3 class="sh" style="font-size:22px;margin:40px 0 24px;">報名步驟</h3>
+    <div class="step-row reveal">
+      <div class="step">
+        <div class="step-dot">1</div>
+        <h3>填寫報名資料</h3>
+        <p>至線上報名系統填妥個人資料與報考志願。</p>
+      </div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <h3>取得轉帳編號並繳費</h3>
+        <p>網路取得轉帳編號完成繳費（符合減免資格者請詳見當年度招生簡章）。</p>
+      </div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <h3>上傳各項資料</h3>
+        <p>照片、身分證、學歷證件、原住民族身分證明，加上專班書面審查資料，依規定格式上傳。</p>
+        <span class="step-tag">格式規定見下方</span>
+      </div>
+      <div class="step">
+        <div class="step-dot">4</div>
+        <h3>完成報考</h3>
+        <p>確認繳費入帳，且所有資料與文件均已上傳完整，即完成報名。</p>
+      </div>
+    </div>
+    <div style="background:var(--cream);border:1px solid #D4C4A8;border-radius:4px;padding:20px 24px;margin:16px 0 28px;">
+      <p style="font-size:14px;color:var(--mid);line-height:1.9;"><strong style="color:var(--dark);">上傳檔案格式：</strong>身分證正反面、學歷及相關證件限 jpg／jpeg／png／pdf，單檔10MB以下。<br><strong style="color:var(--dark);">書面審查資料：</strong>請合併成單一 pdf 檔，50MB以下；超過請改用雲端連結並開放檢視權限（使用 Canva 者請匯出 pdf，勿僅上傳網路連結）。<br><strong style="color:var(--dark);">注意：</strong>因書審資料不齊全或逾期未上傳導致個人成績受影響，概由考生自行負責，不得申請退費。</p>
+    </div>
+    <h3 class="sh" style="font-size:22px;margin:0 0 24px;">面試與成績規定</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">面試須知</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;">一、面試地點於報名時選定，完成報名後不可更改。<br>二、報到時間與地點將另行公告於本校網頁，請自行查詢。<br>三、應試須攜帶應考證及身分證件正本（身分證／護照／附照片健保卡／駕照擇一）辦理報到應試。</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">成績與錄取規定</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;">一、各考科以100分為滿分，總分計算至小數點後第二位。<br>二、任一考試項目為零分或缺考，不予錄取。<br>三、招生委員會訂定最低錄取標準；正取額滿由備取生依序遞補，未足額不列備取。<br>四、各類特種身分考生不適用本考試加分之優待。</p>
+      </div>
+    </div>
+    <h3 class="sh" style="font-size:22px;margin:0 0 24px;">報到與註冊入學</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">正備取生報到</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;">一、一律以通訊寄件報到，截止日期以國內郵戳為憑，逾期即以放棄錄取資格論。<br>二、備取生遞補將分批公告於報到系統，請自行上網查詢，恕不受理電話查詢。<br>三、備取通知必要時輔以電話、E-mail 或簡訊通知，報名所留電話及 E-mail 請務必正確。</p>
+      </div>
+      <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
+        <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">註冊入學</h3>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;">一、錄取新生應於規定日期辦理註冊入學，逾期未辦理者撤銷入學資格。<br>二、繳費、體檢、註冊等事宜預計6～7月另行通知，學籍表與畢業證書請於7月中旬前繳交。<br>三、學雜費標準依本校總務處公告；原住民族學生可申請學雜費減免。<br>四、錄取生不得保留入學資格；就讀期間可於各原住民專班間互轉，但不得轉出原住民專班。</p>
+      </div>
+    </div>
+<div class="btns"><a href="#countdown-section" id="apply-link" class="btn-fill">線上報名</a><a href="#" class="btn-ghost">下載招生簡章</a></div>
   </div>
-  <div id="scholarship">
-    <p class="eyebrow">申請資格與獎學金</p>
+  <div id="scholarship" style="margin-top:64px;">
+    <p class="eyebrow">獎學金申請</p>
     <h2 class="sh" style="margin-bottom:24px;">你可以申請什麼？</h2>
-    <div class="card card-r" style="margin-bottom:12px;"><h3>申請資格</h3><p>具有原住民族身份（需持有原住民族身份證明文件），應屆或歷屆高中職畢業生。</p></div>
     <div class="card card-t" style="margin-bottom:12px;" id="docs"><h3>需要準備的文件</h3>
       <ul style="font-size:15px;color:var(--mid);line-height:2.0;padding-left:18px;margin-top:8px;">
         <li>原住民族身份證明（戶口名簿影本或族籍證明）</li>
@@ -413,7 +569,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <section class="dark-section" style="background:var(--clay);" id="contact">
   <div class="mx"><div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" class="reveal">
     <div><p class="eyebrow eyebrow-lt">直接聯繫我們</p><h2 class="sh sh-lt" style="margin-bottom:16px;">有問題，或者只是想聊聊，</h2><p style="font-size:18px;color:rgba(255,255,255,.55);line-height:1.85;margin-bottom:32px;">我們在 2 個工作天內回覆。不管你現在清楚不清楚自己要什麼，都歡迎來問。</p><a href="mailto:zc@mail.nknu.edu.tw" class="btn-white">✉ 寄信給我們</a></div>
-    <div style="font-size:16px;color:rgba(255,255,255,.55);line-height:2.0;"><p>✉ <a href="mailto:zc@mail.nknu.edu.tw" style="color:var(--amber);">zc@mail.nknu.edu.tw</a></p><p>📞 (07) 717-2930 # 2253</p><p>⏰ 週一至週五 09:00–17:00</p><p>📍 802 高雄市苓雅區和平一路116號<br>&nbsp;&nbsp;&nbsp;&nbsp;高雄師範大學和平校區</p></div>
+    <div style="font-size:16px;color:rgba(255,255,255,.55);line-height:2.0;"><p>✉ <a href="mailto:zc@mail.nknu.edu.tw" style="color:var(--amber);">zc@mail.nknu.edu.tw</a></p><p>📞 (07) 717-2930 # 2253　劉小姐</p><p>⏰ 週一至週五 09:00–17:00</p><p>📍 802 高雄市苓雅區和平一路116號<br>&nbsp;&nbsp;&nbsp;&nbsp;高雄師範大學和平校區</p></div>
   </div></div>
 </section>
 <div class="wave" style="background:var(--clay);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>

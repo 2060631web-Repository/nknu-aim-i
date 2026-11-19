@@ -279,7 +279,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
     <li class="nav-item has-mega"><a href="en-collab.html" data-mega="mega-collab">Collaborate</a></li>
     <li class="nav-item has-mega"><a href="en-apply.html" data-mega="mega-apply">Apply</a></li>
     <li class="nav-item"><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">AIM-I Updates</a></li>
-    <li><a href="en-apply.html" class="nav-apply">Apply Now</a></li>
+    <li><a href="en-apply.html" class="nav-apply" id="nav-apply-link">Apply Now</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="Open Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -312,7 +312,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <div class="mega" id="mega-apply">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">Apply</p><h2 class="mega-headline">You're here.<br>That's a great start.</h2><p class="mega-desc">Certain or not, bring your curiosity. We respond to every question seriously.</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="en-apply.html#qualify">Admission Information</a></li><li><a href="en-apply.html#docs">Eligibility</a></li><li><a href="en-apply.html#faq">FAQ</a></li><li><a href="mailto:zc@mail.nknu.edu.tw" class="hl">✉ Contact Us Directly</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="en-apply.html#channels">Admission Pathways</a></li><li><a href="en-apply.html#qualify">Admission Information</a></li><li><a href="en-apply.html#scholarship">Scholarships</a></li><li><a href="en-apply.html#faq">FAQ</a></li><li><a href="mailto:zc@mail.nknu.edu.tw" class="hl">✉ Contact Us Directly</a></li></ul></div>
   </div>
 </div>
 <section style="background:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(160,120,60,.055) 0px,rgba(160,120,60,.055) 1px,transparent 1px,transparent 22px),repeating-linear-gradient(-45deg,rgba(160,120,60,.055) 0px,rgba(160,120,60,.055) 1px,transparent 1px,transparent 22px);min-height:90vh;display:flex;flex-direction:column;position:relative;overflow:hidden;">
@@ -439,4 +439,5 @@ document.querySelectorAll('.mega-links a').forEach(a=>{a.addEventListener('click
   }
 })();
 </script>
+<script>(function(){var el=document.getElementById('nav-apply-link');if(!el)return;var s=new Date('2026-12-10T09:00:00+08:00').getTime();var REG='https://sso.nknu.edu.tw/Recruit/aboriginal.aspx';function u(){el.href=(new Date().getTime()>=s)?REG:'en-apply.html#countdown-section';}u();setInterval(u,30000);})();</script>
 </body></html>

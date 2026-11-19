@@ -289,7 +289,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
     <li class="nav-item has-mega"><a href="collab.html" data-mega="mega-collab">合作</a></li>
     <li class="nav-item has-mega"><a href="apply.html" data-mega="mega-apply">申請</a></li>
     <li class="nav-item"><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">AIM-I 動態</a></li>
-    <li><a href="apply.html" class="nav-apply">立即報名</a></li>
+    <li><a href="apply.html" class="nav-apply" id="nav-apply-link">立即報名</a></li>
   </ul>
   <button class="hamburger" type="button" aria-label="開啟選單" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -304,7 +304,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <div class="mega" id="mega-learn">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">學習</p><h2 class="mega-headline">知識是地圖，<br>能力是步伐，<br><em>文化是方向。</em></h2><p class="mega-desc">三個核心能力，搭配四年真實場域的學習旅程。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li><li><a href="https://sso.nknu.edu.tw/Services/Web/Default.aspx?webIdx=619&selPage=MoreNews" target="_blank" rel="noopener">最新消息</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="learn.html">三個核心能力</a></li><li><a href="learn.html#journey">四年旅程</a></li><li><a href="learn.html#activities">嚮齡計畫活動</a></li><li><a href="learn.html#careers">畢業出路</a></li></ul></div>
   </div>
 </div>
 <div class="mega" id="mega-people">
@@ -322,7 +322,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
 <div class="mega" id="mega-apply">
   <div class="mega-inner">
     <div class="mega-left"><p class="mega-tag">申請</p><h2 class="mega-headline">你來了，<br>就對了。</h2><p class="mega-desc">不管你現在確定不確定，帶著你的好奇心來就夠了。</p></div>
-    <div class="mega-right"><ul class="mega-links"><li><a href="apply.html#qualify">招生資訊</a></li><li><a href="apply.html#docs">申請資格</a></li><li><a href="apply.html#faq">常見問題</a></li><li><a href="mailto:zc@mail.nknu.edu.tw" class="hl">✉ 直接聯絡我們</a></li></ul></div>
+    <div class="mega-right"><ul class="mega-links"><li><a href="apply.html#channels">入學管道</a></li><li><a href="apply.html#qualify">招生資訊</a></li><li><a href="apply.html#scholarship">獎學金申請</a></li><li><a href="apply.html#faq">常見問題</a></li><li><a href="mailto:zc@mail.nknu.edu.tw" class="hl">✉ 直接聯絡我們</a></li></ul></div>
   </div>
 </div>
 <div class="page-hero" style="padding-top:100px;"><div class="page-hero-inner reveal"><p class="page-eyebrow">夥伴們</p><h1 class="page-title">每一位老師，<br>都帶著自己的專業，<br>回應高齡產業的<em>真實問題。</em></h1><p class="page-lead">他們帶著各自的專業：管理、設計、文化、經濟，一起回應高齡產業最需要被解答的問題。</p></div><div class="wave" style="background:var(--cream);margin:0 -5%;width:calc(100% + 10%);"><svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:160px;"><path d="M0,85 C140,36 300,125 480,78 C660,32 820,112 1000,72 C1160,36 1300,105 1440,74 L1440,160 L0,160 Z" fill="#6B7A38" opacity=".68"/><path d="M0,100 C180,58 360,130 560,92 C760,54 940,118 1140,84 C1280,58 1380,100 1440,90 L1440,160 L0,160 Z" fill="#D4901C" opacity=".52"/><path d="M0,114 C200,84 400,136 620,108 C840,80 1060,128 1280,100 C1360,88 1408,106 1440,100 L1440,160 L0,160 Z" fill="#2A5870" opacity=".65"/><path d="M0,126 C240,108 480,142 720,124 C960,106 1200,138 1440,122 L1440,160 L0,160 Z" fill="#6A4A7A" opacity=".6"/><path d="M0,138 C300,128 600,146 900,136 C1200,126 1350,142 1440,136 L1440,160 L0,160 Z" fill="var(--clay)"/></svg></div></div>
@@ -684,4 +684,5 @@ document.querySelectorAll('.mega-links a').forEach(a=>{a.addEventListener('click
   }
 })();
 </script>
+<script>(function(){var el=document.getElementById('nav-apply-link');if(!el)return;var s=new Date('2026-12-10T09:00:00+08:00').getTime();var REG='https://sso.nknu.edu.tw/Recruit/aboriginal.aspx';function u(){el.href=(new Date().getTime()>=s)?REG:'apply.html#countdown-section';}u();setInterval(u,30000);})();</script>
 </body></html>

@@ -69,6 +69,8 @@ nav{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rgba(
 .cd-inner{max-width:1180px;margin:0 auto;text-align:center;position:relative;z-index:1;}
 .cd-label{font-size:clamp(20px,3vw,28px);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;font-weight:900;}
 .cd-deadline{font-family:'Iansui',serif;font-size:clamp(22px,3.6vw,38px);font-weight:700;color:#fff;margin-bottom:20px;}
+.cd-deadline-link{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:7px;cursor:pointer;transition:opacity .2s,text-decoration-color .2s;}
+.cd-deadline-link:hover{opacity:.82;text-decoration-color:#fff;}
 .cd-over{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:28px;}
 .cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.12);border-radius:8px;padding:18px 26px;min-width:92px;box-sizing:border-box;}
 .cd-num{font-family:var(--serif);font-size:clamp(30px,5vw,54px);font-weight:900;color:#fff;line-height:1;}
@@ -343,7 +345,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
       <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-unit-lbl">Min</span></div>
       <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-unit-lbl">Sec</span></div>
     </div>
-    <p class="cd-deadline" id="deadline-text">Academic Year 2026 · Prospectus Released</p>
+    <a class="cd-deadline cd-deadline-link" id="deadline-text" href="files/AIM-I-admission-brochure.pdf" target="_blank" rel="noopener">Academic Year 2026 · Prospectus Released ↓</a>
     <p style="font-size:15px;color:rgba(255,255,255,.7);margin:-8px 0 20px;">Registration: from 9:00 AM, Thu 10 Dec 2026<br>to 11:59 PM, Thu 7 Jan 2027</p>
     <p class="cd-over" id="cd-over">Questions in the meantime? Get in touch.</p>
     <a href="mailto:zc@mail.nknu.edu.tw" class="btn-white">✉ Questions? Ask us now</a>
@@ -526,7 +528,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
       <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
         <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">Admitted & Waitlisted Candidate Check-In</h3>
-        <p style="font-size:14px;color:var(--mid);line-height:1.9;">1. Check-in is by mail only; the postmark date determines the deadline, and a late submission is treated as forfeiting the offer.<br>2. Waitlist offers are announced in batches on the check-in system — please check regularly, as phone enquiries are not accepted.<br>3. Waitlist notices may also come by phone, email, or text, so please make sure your contact details are accurate.</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;"><strong style="color:var(--clay);font-weight:700;">1. Check-in is by mail only; the postmark date determines the deadline, and a late submission is treated as forfeiting the offer.</strong><br>2. Waitlist offers are announced in batches on the check-in system — please check regularly, as phone enquiries are not accepted.<br>3. Waitlist notices may also come by phone, email, or text, so please make sure your contact details are accurate.</p>
       </div>
       <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
         <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">Registration & Enrolment</h3>

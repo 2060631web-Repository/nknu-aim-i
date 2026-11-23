@@ -78,6 +78,8 @@ nav{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rgba(
 .cd-inner{max-width:1180px;margin:0 auto;text-align:center;position:relative;z-index:1;}
 .cd-label{font-size:clamp(20px,3vw,28px);letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:20px;font-weight:900;}
 .cd-deadline{font-family:'Iansui',serif;font-size:clamp(22px,3.6vw,38px);font-weight:700;color:#fff;margin-bottom:20px;}
+.cd-deadline-link{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:7px;cursor:pointer;transition:opacity .2s,text-decoration-color .2s;}
+.cd-deadline-link:hover{opacity:.82;text-decoration-color:#fff;}
 .cd-over{font-size:15px;color:rgba(255,255,255,.5);margin-bottom:28px;}
 .cd-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.12);border-radius:8px;padding:18px 26px;min-width:92px;box-sizing:border-box;}
 .cd-num{font-family:var(--serif);font-size:clamp(30px,5vw,54px);font-weight:900;color:#fff;line-height:1;}
@@ -351,7 +353,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
       <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-unit-lbl">分</span></div>
       <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-unit-lbl">秒</span></div>
     </div>
-    <p class="cd-deadline" id="deadline-text">116 學年度 · 簡章 已公布</p>
+    <a class="cd-deadline cd-deadline-link" id="deadline-text" href="files/AIM-I-admission-brochure.pdf" target="_blank" rel="noopener">116 學年度 · 簡章 已公布 ↓</a>
     <p style="font-size:15px;color:rgba(255,255,255,.7);margin:-8px 0 20px;">報名：115年12月10日(四)09:00 起<br>至 116年01月07日(四)23:59 止</p>
     <p class="cd-over" id="cd-over">如有疑問請聯繫我們。</p>
     <a href="mailto:zc@mail.nknu.edu.tw" class="btn-white">✉ 有問題，現在就問</a>
@@ -534,7 +536,7 @@ document.addEventListener('dragstart',function(e){if(e.target&&e.target.tagName=
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
       <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
         <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">正備取生報到</h3>
-        <p style="font-size:14px;color:var(--mid);line-height:1.9;">一、一律以通訊寄件報到，截止日期以國內郵戳為憑，逾期即以放棄錄取資格論。<br>二、備取生遞補將分批公告於報到系統，請自行上網查詢，恕不受理電話查詢。<br>三、備取通知必要時輔以電話、E-mail 或簡訊通知，報名所留電話及 E-mail 請務必正確。</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.9;"><strong style="color:var(--clay);font-weight:700;">一、一律以通訊寄件報到，截止日期以國內郵戳為憑，逾期即以放棄錄取資格論。</strong><br>二、備取生遞補將分批公告於報到系統，請自行上網查詢，恕不受理電話查詢。<br>三、備取通知必要時輔以電話、E-mail 或簡訊通知，報名所留電話及 E-mail 請務必正確。</p>
       </div>
       <div class="card" style="background:var(--cream);border:1px solid #D4C4A8;">
         <h3 style="font-size:16px;margin-bottom:10px;color:var(--dark);">註冊入學</h3>

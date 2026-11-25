@@ -269,6 +269,13 @@ footer{background:linear-gradient(to right,#F5F0E2 0%,#F5F0E2 38%,#6B3A18 55%,rg
 @media(min-width:901px){
   .hamburger,.nav-scrim,.drawer-toggle,.drawer-sub{display:none!important;}
 }
+@media(min-width:901px) and (max-width:1279px){
+  /* at narrower desktop/laptop widths the logo (fixed natural ratio, scales up to 100px tall on
+     wide screens) leaves too little room for the nav links + CTA button and they wrap awkwardly;
+     shrink it in this mid-range only -- phones already get their own smaller size above, and
+     screens 1280px+ have enough room for the full-size logo. */
+  .brand img{height:46px!important;}
+}
 </style>
 <style id="aimi-image-protect">
 img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
@@ -518,6 +525,20 @@ function showFaculty(id) {
     tab.style.fontWeight = '700';
   }
 }
+
+// Support a direct link straight to one teacher's profile, e.g. people.html#faculty-huang --
+// skips having to land on the tab strip and click through to find them.
+(function(){
+  var hash = window.location.hash.replace("#", "");
+  if (hash.indexOf("faculty-") === 0) {
+    var id = hash.replace("faculty-", "");
+    showFaculty(id);
+    var card = document.getElementById(hash);
+    if (card) {
+      setTimeout(function(){ card.scrollIntoView({block: "start"}); }, 0);
+    }
+  }
+})();
 </script>
 <div class="wave" style="background:var(--olive);"><svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:70px;"><path d="M0,38 C200,12 440,60 680,36 C920,12 1160,54 1400,34 C1420,30 1435,36 1440,34 L1440,70 L0,70 Z" fill="var(--cream)"/></svg></div>
 <section style="background:var(--parch,#EDE5D0);padding:72px 5%;" id="mentors">
